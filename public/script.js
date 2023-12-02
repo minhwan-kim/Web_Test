@@ -1,301 +1,266 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const projects = document.querySelectorAll('.project');
+    const listItems = document.querySelectorAll('.list .tile');
+    const filterButtons = document.querySelectorAll('.filterButton');
+    const imageCountDisplay = document.getElementById('imageCountDisplay');
+    const leftOverlay = document.querySelector('.cursor-overlay.left');
+    const rightOverlay = document.querySelector('.cursor-overlay.right');
+    let currentProjectIndex = 0;
+    let currentImageIndex = 0;
+    const activeFilters = [];
+    const projectsContainer = document.getElementById('slideshow'); // Adjust if necessary to select your projects container
+    let touchstartX = 0;
+    let touchendX = 0;
 
-delete slidesTotal;
-let slidesTotal = document.querySelectorAll("#slideshow figure").length;
-document.documentElement.style.setProperty('--slides-total', slidesTotal);
-console.log(slidesTotal);
-let currentImageLuminance = 128; // Default value
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    // let slidesTotal = document.querySelectorAll("#slideshow figure").length;
-    // document.documentElement.style.setProperty('--slides-total', slidesTotal);
-
-    initializeCursorCustomization();
-    initializeFiltering();
-    initializeListItemClicks();
-    initializeClearFilterLink();
-
-    setActiveItem();
-    updateCaption();
-    window.addEventListener("hashchange", updateSlideshow);
-
-});
-
-function initializeCursorCustomization() {
-    document.querySelectorAll('figure a').forEach(link => {
-        link.addEventListener('mousemove', handleLinkMouseMove);
-        link.addEventListener('mouseleave', () => link.style.cursor = 'default');
-    });
-}
-
-function handleLinkMouseMove(event) {
-    const linkCenter = this.offsetWidth / 2;
-
-    if (event.offsetX < linkCenter) {
-        // Show "Previous" cursor
-        this.style.cursor = currentImageLuminance > 128 ? 'url("images/next.svg"), auto' : 'url("images/next_white.svg"), auto';
-    } else {
-        // Show "Next" cursor
-        this.style.cursor = currentImageLuminance > 128 ? 'url("images/previous.svg"), auto' : 'url("images/previous_white.svg"), auto';
-    }
-}
-
-function updateSlideshow() {
-    setActiveItem();
-    updateCaption();
-}
-
-
-
-function extractMainProjectID(id) {
-    const match = id.match(/project_\d+/);
-    return match ? match[0] : id;
-}
-
-function getAverageImageColor(imgEl, callback) {
-    let canvas = document.createElement('canvas');
-    let context = canvas.getContext('2d');
-    canvas.width = imgEl.width;
-    canvas.height = imgEl.height;
-
-    context.drawImage(imgEl, 0, 0, imgEl.width, imgEl.height);
-    let data = context.getImageData(0, 0, imgEl.width, imgEl.height*0.05).data;
-
-    let r = 0, g = 0, b = 0;
-    for (let i = 0; i < data.length; i += 4) {
-        r += data[i];
-        g += data[i + 1];
-        b += data[i + 2];
-    }
-
-    r /= (data.length / 4);
-    g /= (data.length / 4);
-    b /= (data.length / 4);
-
-    callback({ r, g, b });
-}
-
-
-document.querySelectorAll("#slideshow figure").forEach(figure => {
-    const figcaption = figure.querySelector('figcaption');
-    figcaption.setAttribute('data-original-caption', figcaption.textContent.trim());
-});
-
-
-function updateCaption() {
-    const allFigcaptions = document.querySelectorAll('figcaption');
-    allFigcaptions.forEach(figcaption => figcaption.style.opacity = '0');
-
-    const visibleFigure = document.querySelector('figure:target');
-    if (visibleFigure) {
-        const projectId = visibleFigure.getAttribute('data-project');
-        const projectFigures = document.querySelectorAll(`figure[data-project='${projectId}']`);
-        const projectTotal = projectFigures.length;
-        const projectIndex = Array.from(projectFigures).indexOf(visibleFigure) + 1;
-
-        let figcaption = visibleFigure.querySelector('figcaption');
-        let imageCountDiv = visibleFigure.querySelector('.image-count');
-
-        if (figcaption && imageCountDiv) {
-            // Reset to original caption and append image count
-            const originalCaption = figcaption.getAttribute('data-original-caption');
-            imageCountDiv.textContent = `${projectIndex}/${projectTotal}`;
-
-            const img = visibleFigure.querySelector('img');
-            if (img && (img.crossOrigin === "anonymous" || isSameOrigin(img.src))) {
-                getAverageImageColor(img, function(color) {
-                    // Determine caption color based on image luminance
-                    const luminance = 0.299 * color.r + 0.587 * color.g + 0.114 * color.b;
-                    const textColor = (luminance > 128) ? 'black' : 'white';
-                    figcaption.style.color = textColor;
-                    imageCountDiv.style.color = textColor;
-                });
-            } else {
-                // Fallback color for cross-origin images or if no image is present
-                figcaption.style.color = 'black';
-                imageCountDiv.style.color = 'black';
-            }
-
-            figcaption.style.opacity = '1';
+    function handleGesture() {
+        if (touchendX < touchstartX) {
+            navigateToRight(); // Swipe left
+        }
+        if (touchendX > touchstartX) {
+            navigateToLeft(); // Swipe right
         }
     }
-}
 
-function isSameOrigin(url) {
-    const pageLocation = window.location;
-    const URLObject = new URL(url, pageLocation);
-    return URLObject.origin === pageLocation.origin;
-}
+    projectsContainer.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+    });
+
+    projectsContainer.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
 
 
+    // blur img when cursor is hovering over figcaption
+    
+    document.querySelectorAll('figcaption').forEach(caption => {
+        caption.addEventListener('mouseover', () => {
+            caption.previousElementSibling.classList.add('blur');
+        });
+        caption.addEventListener('mouseout', () => {
+            caption.previousElementSibling.classList.remove('blur');
+        });
+    });
+    
+
+    function isProjectVisible(project) {
+        if (activeFilters.length === 0) {
+            return true;
+        }
+        const projectFilters = project.dataset.filter.split(' ');
+        return activeFilters.some(filter => projectFilters.includes(filter));
+    }
+    
 
 
-function initializeFiltering() {
-    const filterButtons = document.querySelectorAll('.filterButton');
+    function findNextVisibleProjectIndex(direction) {
+        let index = currentProjectIndex;
+        do {
+            index = (index + direction + projects.length) % projects.length;
+        } while (!isProjectVisible(projects[index]));
+        return index;
+    }
+
+    function updateFilterButtons() {
+        filterButtons.forEach(button => {
+            const filter = button.getAttribute('data-filter');
+            const isActive = activeFilters.includes(filter);
+            button.classList.toggle('active', isActive);
+        });
+    }
+
+    function updateImageCountDisplay(projectIndex, imageIndex) {
+        const project = projects[projectIndex];
+        const totalImages = project.querySelectorAll('figure').length;
+        imageCountDisplay.textContent = ` ${imageIndex + 1} / ${totalImages}`;
+    }
+
+    function updateActiveListItem(projectId) {
+        listItems.forEach(item => {
+            if (item.id === `${projectId}_list`) {
+                item.classList.add('active');
+                // Scroll the active list item into view
+                item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+    
+    
+    function updateListItems() {
+        listItems.forEach(item => {
+            const projectId = item.id.replace('_list', '');
+            const project = document.getElementById(projectId);
+            if (isProjectVisible(project)) {
+                item.classList.remove('filtered');
+            } else {
+                item.classList.add('filtered');
+            }
+        });
+    }
+
+    function applyFilter(filter) {
+        const index = activeFilters.indexOf(filter);
+        if (index === -1) {
+            activeFilters.push(filter);
+        } else {
+            activeFilters.splice(index, 1);
+        }
+        applyFilters();
+        updateActiveListItem(projects[currentProjectIndex].id);
+    }
+    function applyFilters() {
+        let foundVisible = false;
+        let firstVisibleIndex = -1;
+    
+        // Check each project's visibility based on the active filters
+        projects.forEach((project, index) => {
+            const isVisible = isProjectVisible(project);
+            project.style.display = isVisible ? 'block' : 'none';
+    
+            // Keep track of the first visible project
+            if (isVisible && firstVisibleIndex === -1) {
+                firstVisibleIndex = index;
+            }
+            // Check if the current project is still visible
+            if (isVisible && index === currentProjectIndex) {
+                foundVisible = true;
+            }
+        });
+    
+        // If the current project is not visible or there are no visible projects, update the index
+        if (!foundVisible) {
+            if (firstVisibleIndex !== -1) {
+                currentProjectIndex = firstVisibleIndex;
+                currentImageIndex = 0;
+            } else {
+                // If no projects are visible, perhaps hide the slideshow or show a message
+            }
+        }
+    
+        // Update the display based on the current project and image indices
+        showImage(currentProjectIndex, currentImageIndex);
+    
+        updateFilterButtons();
+        updateListItems();
+    }
+        
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (this.classList.contains('active')) {
-                this.classList.remove('active');
-            } else {
-                this.classList.add('active');
-            }
-            filterProjects();
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            applyFilter(filter);
         });
     });
-}
 
-function filterProjects() {
-    const activeFilters = [];
-
-    document.querySelectorAll('.filterButton.active').forEach(button => {
-        activeFilters.push(button.getAttribute('data-filter'));
+    document.getElementById('clearFilterLink').addEventListener('click', () => {
+        clearFilter();
+        updateListItems();
     });
 
-    let firstVisibleProjectId = null;
-
-    document.querySelectorAll('.list .tile').forEach(item => {
-        item.style.color = "#B1B1B1";
-    });
-
-    document.querySelectorAll('figure').forEach(figure => {
-        if (activeFilters.length === 0) {
-            figure.style.display = '';
-            document.getElementById(extractMainProjectID(figure.id) + "_list").style.color = "black";
-            return;
-        }
-
-        let show = false;
-        activeFilters.forEach(filter => {
-            if (figure.classList.contains(filter)) {
-                show = true;
-                if (!firstVisibleProjectId) {
-                    firstVisibleProjectId = figure.id;
-                }
-            }
-        });
-
-        figure.style.display = show ? '' : 'none';
-        if (show) {
-            document.getElementById(extractMainProjectID(figure.id) + "_list").style.color = "black";
-        }
-    });
-
-    if (firstVisibleProjectId) {
-        window.location.hash = firstVisibleProjectId;
-        setActiveItem();
-    }
-}
-
-function setActiveItem() {
-    const listItems = document.querySelectorAll('.list .tile');
-    listItems.forEach(item => {
-        item.style.backgroundColor = "";
-        item.style.borderRadius = "0px";
-    });
-
-    const hash = window.location.hash;
-    if (hash) {
-        const activeItemID = extractMainProjectID(hash.slice(1)) + "_list";
-        const activeItem = document.getElementById(activeItemID);
-        if (activeItem) {
-            activeItem.style.backgroundColor = "#E2E1CD";
-            activeItem.style.borderRadius = "0px 0px 0px 0px";
-            activeItem.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest'
-            });
-        }
-    }
-}
-
-function resetFilters() {
-    document.querySelectorAll('.filterButton').forEach(button => {
-        button.classList.remove('active');
-    });
-    document.querySelectorAll('figure').forEach(figure => {
-        figure.style.display = '';
-    });
-    document.querySelectorAll('.list .tile').forEach(item => {
-        item.style.color = "black";
-    });
-}
-
-
-
-function initializeListItemClicks() {
-    document.addEventListener('click', function(event) {
-        const tile = event.target.closest('.list .tile');
-        if (!tile) return; // Skip, if the clicked element is not a tile
-
-        const projectId = extractMainProjectID(tile.id);
-        const projectElement = document.getElementById(projectId);
-
-        // Check if the element is visible
-        const isActive = isVisible(projectElement);
-
-        if (!isActive) {
-            resetFilters(); // Clear filters
-            filterProjects(); // Update project display
-        }
-
-        navigateToProject(projectId); // Navigate to the project
-    });
-}
-
-function isVisible(element) {
-    const style = getComputedStyle(element);
-    return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
-}
-
-function navigateToProject(projectId) {
-    // Update the hash to navigate to the project
-    window.location.hash = projectId;
-
-    // Optional: Scroll the project into view
-    const projectElement = document.getElementById(projectId);
-    if (projectElement) {
-        projectElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    function clearFilter() {
+        activeFilters.length = 0; // Clear the active filters array
+        filterButtons.forEach(btn => btn.classList.remove('active')); // Remove active class from filter buttons
+        updateFilterButtons();
+        projects.forEach(project => project.style.display = 'block'); // Show all projects
+        listItems.forEach(item => item.classList.remove('filtered', 'active')); // Clear any 'filtered' or 'active' classes
+        updateListItems(); // Update list items to show all as available
+        // No need to call navigateToProject here, it will be called in handleProjectClick
     }
 
-    // Call setActiveItem to update the active state of the list item
-    setActiveItem();
-}
 
-
-function show_alert() {
-    alert("Hello! I am an alert box!");
-}
-
-
-function initializeClearFilterLink() {
-    const clearFilterLink = document.getElementById('clearFilterLink');
-    if (clearFilterLink) {
-        clearFilterLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            resetFilters();
-
-            const firstFigure = document.querySelector('figure');
-            if (firstFigure && firstFigure.id) {
-                window.location.hash = firstFigure.id;
-            }
-        });
+    function handleProjectClick(projectId) {
+        clearFilter(); // Clear all filters
+        navigateToProject(projectId); // Navigate to the clicked project
     }
-}
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll("img[data-highres]").forEach(img => {
-        if (img.complete) {
-            loadHighResImage(img);
+
+    function showImage(projectIndex, imageIndex) {
+        projects.forEach(p => p.style.display = 'none');
+        const project = projects[projectIndex];
+        project.style.display = 'block';
+    
+        const figures = project.querySelectorAll('figure');
+        figures.forEach(fig => fig.style.display = 'none');
+        figures[imageIndex].style.display = 'block';
+        figures[imageIndex].querySelector('figcaption').style.display = 'block';
+    
+        const figure = figures[imageIndex];
+        if (figure.classList.contains('dark')) {
+            imageCountDisplay.style.color = 'black';
+            leftOverlay.style.cursor = "url('../images/previous.svg'), auto";
+            rightOverlay.style.cursor = "url('../images/next.svg'), auto";
         } else {
-            img.onload = () => loadHighResImage(img);
+            imageCountDisplay.style.color = 'white';
+            leftOverlay.style.cursor = "url('../images/previous_white.svg'), auto";
+            rightOverlay.style.cursor = "url('../images/next_white.svg'), auto";
         }
-    });
-});
+    
+        currentProjectIndex = projectIndex; // Update the current project index
+        currentImageIndex = imageIndex; // Update the current image index
+    
+        updateImageCountDisplay(projectIndex, imageIndex); // Update the image counter display
+        updateActiveListItem(projects[projectIndex].id); // Update the active state of the list item
 
-function loadHighResImage(img) {
-    const highResSrc = img.getAttribute("data-highres");
-    const highResImage = new Image();
-    highResImage.src = highResSrc;
-    highResImage.onload = () => img.src = highResSrc;
-}
+    }
+    
+    function navigateToProject(projectId) {
+        const projectIndex = Array.from(projects).findIndex(p => p.id === projectId);
+        if (projectIndex >= 0) {
+            currentProjectIndex = projectIndex;
+            currentImageIndex = 0; // Reset to the first image of the project
+            showImage(currentProjectIndex, currentImageIndex); // Show the first image
+        } else {
+            console.error('Project with ID not found:', projectId);
+        }
+    }
+    
+
+    
+    listItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const projectId = item.id.replace('_list', '');
+            const project = document.getElementById(projectId);
+    
+            if (isProjectVisible(project)) {
+                // Project is active under the current filter
+                navigateToProject(projectId);
+            } else {
+                // Project is inactive under the current filter
+                clearFilter(); // Clear all filters
+                navigateToProject(projectId); // Navigate to the clicked project
+            }
+        });
+    });
+    
+
+
+    function navigateToLeft() {
+        if (currentImageIndex > 0) {
+            currentImageIndex--;
+        } else {
+            currentProjectIndex = findNextVisibleProjectIndex(-1);
+            currentImageIndex = projects[currentProjectIndex].querySelectorAll('figure').length - 1;
+        }
+        showImage(currentProjectIndex, currentImageIndex);
+    }
+
+    function navigateToRight() {
+        const figures = projects[currentProjectIndex].querySelectorAll('figure');
+        if (currentImageIndex < figures.length - 1) {
+            currentImageIndex++;
+        } else {
+            currentProjectIndex = findNextVisibleProjectIndex(1);
+            currentImageIndex = 0;
+        }
+        showImage(currentProjectIndex, currentImageIndex);
+    }
+
+    leftOverlay.addEventListener('click', navigateToLeft);
+    rightOverlay.addEventListener('click', navigateToRight);
+
+    showImage(currentProjectIndex, currentImageIndex);
+
+    
+});

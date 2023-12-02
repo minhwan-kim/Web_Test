@@ -1,8 +1,12 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 
 img {
   transition: opacity 0.5s;
@@ -26,145 +30,139 @@ body, html {
   word-spacing: 0.5px;
   font-size: 0.90rem;
   line-height: 1.2rem;
+  background-color: #F6F6F6;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
-h2 {
-  /* font-family: 'Hanken Grotesk', sans-serif;
-  font-weight: 600; */
-  font-family: "neue-haas-grotesk-text", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 0.90rem;
-  line-height: 1.24rem;
-  display: inline;
-}
 
-main {
-  grid-area: main;
-  height: calc(100%);
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  overscroll-behavior-x: contain;
-  display: flex;
-  background: #F6F6F6;
-  cursor: none;
-}
-
-main::-webkit-scrollbar {
-  display: none;
-}
-
-#slideshow .show {
-  opacity: 1;
-}
-
-#slideshow figure {
-  cursor: none;
-  position: relative;
-  scroll-snap-align: start;
-  width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  margin: 0px 0px 0px 4px;
-  /* margin:0; */
-  opacity: 1;
-  display: block;
-}
-
-#slideshow figure a {
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
-}
-
-#slideshow a iframe {
-  width: 100vw;
-  min-height: 60vh;
-  pointer-events: none;
-}
-
-#slideshow a img, #slideshow a object {
-  max-width: 71.5vw;
-  min-height: 100vh;
-  object-fit: cover;
-}
-
-#slideshow .fit {
-  object-fit: contain;
-}
-
-/*
-#project_8{
-  background: grey;
-} */
-#slideshow a:focus-visible {
-  outline: 0;
-}
-
-#slideshow a:before,
-#slideshow a:after {
-  z-index: 5;
-  /* cover the current image <a> */
-  content: "";
-  display: block;
+.cursor-overlay {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 50%;
+  z-index: 5;
+  background: transparent;
 }
 
-#slideshow a:before {
-  left: -50%;
+.cursor-overlay.left {
+  left: 0;
+  cursor: url('../images/previous_white.svg'), auto;
+
 }
 
-#slideshow a:after {
-  /* background: red; */
-  right: -50%;
+.cursor-overlay.right {
+  right: 0;
+  cursor: url('../images/next_white.svg'), auto;
 }
 
-#slideshow :first-child a:before {
-  left: calc(var(--slides-total) * 100% - 50%);
+
+#slideshow {
+  width: 100%;
+  height: 100vh;
+  margin: 50;
+  overflow: hidden;
+  position: relative;
 }
 
-#slideshow :last-child a:after {
-  right: calc(var(--slides-total) * 100% - 50%);
+.project {
+  display: none; /* Hide all projects initially */
+  width: 100%;
+  height: 100%;
+}
+
+.project figure {
+  position: relative; /* Set to relative for absolute positioning of children */
+  /* text-align: center; */
+  /* margin: 0; */
+  width: 100%;
+  height: 100vh;
+  margin:0;
+}
+
+.project img {
+  height: 100vh;
+  width: 100%; /* Ensures the image can scale properly */
+  object-fit: cover; /* Default setting, JavaScript will override if needed */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: filter 1.3s ease-in-out;
+}
+
+.project img.fit {
+  object-fit: contain !important; /* Ensures the whole image is visible */
+  width: 100% !important; /* Adjust as needed */
+  height: 100vh !important; /* Adjust as needed */
+  object-position: center !important; /* Align the image nicely in its container */
+}
+
+.project iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 100%; /* Full width of the parent */
+  min-height: 60%; /* Full height of the parent */
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+
+}
+
+
+
+.dark figcaption{
+  color: black;
 }
 
 figcaption {
-  position: absolute;
-  /* bottom: 2vh; */
-  top:0;
+  position: absolute; /* Absolute position */
+  left: 0;
+  top: 16px;
   width: 92%;
   margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 16px;
-  color: white;
-  /* background-color: rgba(0,0,0,0.5); */
-  /* display: none; */
-  transition: opacity 1.3s ease, color 0.8s ease;
-  /* Adjust timing as needed */
+  color: white; /* Text color */
   opacity: 1;
-  /* Initial state hidden */
+  transition: opacity 1.3s ease, color 0.8s ease;
+  z-index: 99;
 }
 
-.image-count {
-    position: absolute;
-    top: 0; /* Adjust as needed */
-    right:0;
-    margin-top: 16px;
-    margin-right: 20px;
-    color: white; /* Example color */
-    font-size: 0.9rem; /* Example font size */
-    transition: opacity 1.3s ease, color 0.8s ease;
-    opacity: 1;
-    letter-spacing: .15rem;
+.blur {
+  filter: blur(3em);
+  transition: filter 1.3s ease-in-out;
+}
+
+
+#imageCountDisplay {
+  position: absolute;
+  top: 16px;
+  margin-right:20px;
+  right: 0;
+
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  color: white;
+  z-index: 10;
+}
+
+#nextimage{
+  position: absolute;
+  bottom: 16px;
+  margin-right:20px;
+  right: 0;
+
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  color: white;
+  z-index: 10;
+
 
 }
+
 
 
 aside {
@@ -176,6 +174,18 @@ aside {
   overflow-x: hidden;
 }
 
+.intro, .index {
+  position: sticky; /* or 'fixed' depending on your layout */
+  top: 0; /* Adjust as needed */
+  z-index: 10; /* Ensures these sections stay above other content */
+}
+
+.list {
+  max-height: calc(100vh - /* height of intro and index */);
+  overflow-y: scroll; /* Enables vertical scrolling */
+}
+
+
 .intro {
   /* background: red; */
   padding-bottom: 8vh;
@@ -183,6 +193,17 @@ aside {
   margin-left: 22px;
   margin-right: 20px;
   margin-top: 16px;
+}
+
+h2 {
+  /* font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 600; */
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.90rem;
+  line-height: 1.24rem;
+  display: inline;
 }
 
 .index {
@@ -250,9 +271,6 @@ ul {
   justify-content: flex-start;
 }
 
-.category {
-  /* border-right: 0.1rem solid; */
-}
 
 .subjects {
   padding-left: 20px;
@@ -270,6 +288,24 @@ ul {
   /* margin-top: 12px; */
 }
 
+.list::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+.list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #b4b3a3; /* Handle color */
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #ffe600; /* Handle color on hover */
+}
+
+
+
 .tile {
   width: 100%;
   min-width: 150px;
@@ -280,6 +316,7 @@ ul {
   transition: background-color 0.3s ease;
   color: black;
   border-bottom: dashed lightgray 0.75px;
+
 }
 
 .tile_category {
@@ -298,14 +335,19 @@ ul {
 .tile:hover {
   /* background: #D0FF71; green*/
   /* border-radius: 24px; */
-  background: #FFE600;
+  background: #ffe600;
 }
 
 .active {
-  background: blue;
-  border-radius: 24px;
-  color: white;
+  background: #E2E1CD;
+  /* border-radius: 24px; */
+  color: black;
 }
+
+.filtered {
+  color: #d0d0d0;
+}
+
 
 .filterButton {
   background-color: #F6F6F6;
@@ -331,15 +373,24 @@ ul {
 
 .filterButton.active {
   /* background-color: #847E96; */
-  background-color: #757086;
+  background-color: rgb(47, 89, 255);
   color: white;
 }
+
+.filterButton.active:hover {
+  /* background-color: #847E96; */
+  background-color: rgb(88, 122, 255);
+  color: white;
+}
+
+
 
 .filterButton:hover {
   background-color: #FFE600;
 }
 
-footer {
-  grid-area: footer;
-
+/* Add to your existing CSS */
+#move_to_top {
+  text-align: center; /* Center the text inside the tile */
+  /* Add other styles as needed */
 }

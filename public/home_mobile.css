@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main, body{
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  word-spacing: 0.5px;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  overflow-x:hidden;
+}
+
+h2 {
+  /* font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 600; */
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.90em;
+  line-height: 1.2em;
+  display: inline;
+}
+
+.intro{
+  padding: 20px 20px 0px 20px;
+
+}
+
+.sort{
+  padding: 20px 20px 0px 20px;
+}
+
+.sort button {
+  font-size: 0.8rem;
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 8px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 8px;
+  font-size: 0.75em;
+
+}
+
+.sort button:hover,
+.sort button:active { /* Targets buttons on hover and when clicked/active */
+  background-color: #FE4814;
+  color: white;
+  transition: background-color 300ms;
+}
+
+
+
+.project {
+  width: 100%; /* Full width */
+  margin-bottom: 20px; /* Spacing between projects, adjust as needed */
+}
+
+.project figure {
+  position: relative;
+  height: auto; /* Adjust height to fit the content */
+  transition: transform 0.3s ease-in-out;
+}
+
+.project img {
+  width: 100%; /* Image fills the width of the figure */
+  height: 700px; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area while preserving aspect ratio */
+  display: block; /* Remove any default inline spacing */
+}
+
+.project figcaption {
+  width: 75%;
+  color: black; /* Your style here */ /* Optional: styling for visibility */
+  padding: 5px; /* Space inside the caption */
+  text-align: left; /* Align text to center */
+}
+
+/* Correct the typo in the selector */
+.project figure img {
+  max-height: 70vh; /* Limit the image height */
+  object-fit: cover; /* Adjusts the object-fit property */
+}
