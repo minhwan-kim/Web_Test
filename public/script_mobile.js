@@ -1,5 +1,3 @@
-
-
 // Event listeners for weight sorting
 document.getElementById('sortByWeightAsc').addEventListener('click', function() {
     sortProjects('weight', 'asc');
@@ -35,85 +33,100 @@ function sortProjects(attribute, direction) {
         let valueB = b.getAttribute(`data-${attribute}`);
 
         if (attribute === 'date') {
-            // Convert to date objects for comparison
             valueA = new Date(valueA);
             valueB = new Date(valueB);
         } else {
-            // Parse as integers for numerical comparison
-            valueA = parseInt(valueA);
-            valueB = parseInt(valueB);
+            valueA = parseInt(valueA, 10);
+            valueB = parseInt(valueB, 10);
         }
 
         return direction === 'asc' ? valueA - valueB : valueB - valueA;
     });
 
     let parent = projects[0].parentNode;
-    projects.forEach(project => {
-        parent.appendChild(project);
-    });
+    projects.forEach(project => parent.appendChild(project));
 }
+
+function showFigure(figures, index, project) {
+    figures.forEach(figure => {
+        figure.style.display = 'none'; // Hide all figures
+    });
+    figures[index].style.display = 'block'; // Show the current figure
+
+    // Update the image count for the project
+    let imageCountInfo = `${index + 1}/${figures.length}`;
+    let imageCountDisplay = project.querySelector('.image-count');
+    if (!imageCountDisplay) {
+        imageCountDisplay = document.createElement('div');
+        imageCountDisplay.className = 'image-count';
+        project.appendChild(imageCountDisplay);
+    }
+    imageCountDisplay.innerText = imageCountInfo;
+}
+
+// Touch event handlers
+function handleTouchStart(evt) {
+    const img = evt.target.closest('figure').querySelector('img');
+    this.xDown = evt.touches[0].clientX;
+    this.yDown = evt.touches[0].clientY;
+    this.isTap = true; // Assume it's a tap until proven otherwise
+    this.currentFigure = img;
+}
+
+function handleTouchMove(evt) {
+    if (!this.xDown || !this.yDown) {
+        return;
+    }
+
+    var xDiff = this.xDown - evt.touches[0].clientX;
+    var yDiff = this.yDown - evt.touches[0].clientY;
+
+    if (Math.abs(xDiff) > 10 || Math.abs(yDiff) > 10) {
+        this.isTap = false; // Not a tap, it's a swipe
+    }
+}
+
+function handleTouchEnd(evt) {
+    if (this.isTap) {
+        let rect = this.currentFigure.getBoundingClientRect();
+        let x = this.xDown - rect.left;
+        let figures = Array.from(this.currentFigure.closest('.project').querySelectorAll('figure'));
+        let currentIndex = figures.indexOf(this.currentFigure.closest('figure'));
+
+        if (x < rect.width / 2) {
+            // Left half tapped
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : figures.length - 1;
+        } else {
+            // Right half tapped
+            currentIndex = currentIndex < figures.length - 1 ? currentIndex + 1 : 0;
+        }
+
+        showFigure(figures, currentIndex, this.currentFigure.closest('.project'));
+    }
+
+    // Reset values
+    this.xDown = null;
+    this.yDown = null;
+    this.isTap = false;
+}
+
+// Initialize projects on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
     var projects = document.querySelectorAll('.project');
-
     projects.forEach(function(project) {
-        let figures = project.getElementsByTagName('figure');
-        let currentIndex = 0;
-        let xDown = null;
-        let yDown = null;
-        let isTap = false;
+        let figures = project.querySelectorAll('figure');
+        project.xDown = null;
+        project.yDown = null;
+        project.isTap = false;
+        project.currentFigure = null;
 
-        function handleTouchStart(evt) {
-            xDown = evt.touches[0].clientX;
-            yDown = evt.touches[0].clientY;
-            isTap = true; // Assume it's a tap until proven otherwise
-        };
+        figures.forEach((figure, index) => {
+            figure.addEventListener('touchstart', handleTouchStart.bind(project), false);
+            figure.addEventListener('touchmove', handleTouchMove.bind(project), false);
+            figure.addEventListener('touchend', handleTouchEnd.bind(project), false);
+        });
 
-        function handleTouchMove(evt) {
-            if (!xDown || !yDown) {
-                return;
-            }
-
-            var xUp = evt.touches[0].clientX;
-            var yUp = evt.touches[0].clientY;
-            var xDiff = xDown - xUp;
-            var yDiff = yDown - yUp;
-
-            // Check if the touch move is significant for a swipe
-            if (Math.abs(xDiff) > 10 || Math.abs(yDiff) > 10) {
-                isTap = false; // Not a tap, it's a swipe
-            }
-        };
-
-        function handleTouchEnd(evt) {
-            if (isTap) {
-                let rect = project.getBoundingClientRect();
-                let x = xDown - rect.left;
-
-                if (x < rect.width / 2) {
-                    // Left half tapped
-                    currentIndex = currentIndex > 0 ? currentIndex - 1 : figures.length - 1;
-                } else {
-                    // Right half tapped
-                    currentIndex = currentIndex < figures.length - 1 ? currentIndex + 1 : 0;
-                }
-
-                showFigure(figures, currentIndex);
-            }
-
-            // Reset values
-            xDown = null;
-            yDown = null;
-            isTap = false;
-        }
-
-        project.addEventListener('touchstart', handleTouchStart, false);
-        project.addEventListener('touchmove', handleTouchMove, false);
-        project.addEventListener('touchend', handleTouchEnd, false);
+        // Initialize with the first image
+        showFigure(figures, 0, project);
     });
-
-    function showFigure(figures, index) {
-        for (let i = 0; i < figures.length; i++) {
-            figures[i].style.display = i === index ? 'block' : 'none';
-        }
-    }
 });

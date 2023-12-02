@@ -6,12 +6,12 @@
 
 main, body{
   font-family: "neue-haas-grotesk-text", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
-  letter-spacing: 0.5px;
-  word-spacing: 0.5px;
-  font-size: 0.9em;
-  line-height: 1.2em;
+  letter-spacing: 0.25px;
+  /* word-spacing: 0.5px; */
+  font-size: 14px;
+  line-height: 16px;
   overflow-x:hidden;
 }
 
@@ -27,12 +27,12 @@ h2 {
 }
 
 .intro{
-  padding: 20px 20px 0px 20px;
+  padding: 14px 14px 0px 14px;
 
 }
 
 .sort{
-  padding: 20px 20px 0px 20px;
+  padding: 14px 14px 0px 14px;
 }
 
 .sort button {
@@ -69,31 +69,58 @@ h2 {
 
 .project {
   width: 100%; /* Full width */
-  margin-bottom: 20px; /* Spacing between projects, adjust as needed */
+  padding-bottom: 56px;
+  position: relative; /* Make the .project container relative */
+  display: flex; /* Add this */
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-start; /* Align children to the start of the flex container */
+
 }
 
 .project figure {
   position: relative;
   height: auto; /* Adjust height to fit the content */
   transition: transform 0.3s ease-in-out;
+  width: 100%;
+
 }
 
 .project img {
   width: 100%; /* Image fills the width of the figure */
-  height: 700px; /* Maintain aspect ratio */
+  height: 500px; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the area while preserving aspect ratio */
   display: block; /* Remove any default inline spacing */
+  padding-left:14px;
+  padding-right: 14px;
 }
 
 .project figcaption {
-  width: 75%;
+  width: 85%;
   color: black; /* Your style here */ /* Optional: styling for visibility */
-  padding: 5px; /* Space inside the caption */
+  padding-left: 14px; /* Space inside the caption */
+  margin-top: 12px;
   text-align: left; /* Align text to center */
+
 }
 
 /* Correct the typo in the selector */
 .project figure img {
   max-height: 70vh; /* Limit the image height */
   object-fit: cover; /* Adjusts the object-fit property */
+}
+
+/* New CSS for the image count container */
+.image-count-container {
+  position: absolute;
+  top: 512px;
+  right: 12px;
+  letter-spacing: 2px;
+  text-align: right;
+
+}
+
+figcaption,
+.image-count-container {
+  display: inline-block;
+  vertical-align: baseline;
 }
