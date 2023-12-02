@@ -336,17 +336,17 @@
 
 
 <script>
-  function redirectToMobile() {
+function redirectToMobile() {
     var mobileThreshold = 768; // Width in pixels to define a mobile device
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    if (window.innerWidth <= mobileThreshold || isMobile) {
-      window.location.href = 'index_mobile.html'; // URL of the mobile site
+    if ((window.innerWidth <= mobileThreshold || isMobile) && !window.location.href.endsWith('index_mobile.html')) {
+        window.location.href = 'index_mobile.html'; // Redirect to the mobile site
     }
-  }
+}
 
-  document.addEventListener('DOMContentLoaded', redirectToMobile);
-  window.addEventListener('resize', redirectToMobile);
+document.addEventListener('DOMContentLoaded', redirectToMobile);
+window.addEventListener('resize', redirectToMobile);
 
 </script>
 

@@ -387,17 +387,17 @@
 
 
 <script>
-  function redirectToMobile() {
+function redirectToDesktop() {
     var mobileThreshold = 768; // Width in pixels to define a mobile device
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    var isNotMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) == false;
 
-    if (window.innerWidth >= mobileThreshold || isMobile) {
-      window.location.href = 'index.html'; // URL of the mobile site
+    if (window.innerWidth > mobileThreshold && isNotMobile && !window.location.href.endsWith('index.html')) {
+        window.location.href = 'index.html'; // Redirect to the desktop site
     }
-  }
+}
 
-  document.addEventListener('DOMContentLoaded', redirectToMobile);
-  window.addEventListener('resize', redirectToMobile);
+document.addEventListener('DOMContentLoaded', redirectToDesktop);
+window.addEventListener('resize', redirectToDesktop);
 
 </script>
 
