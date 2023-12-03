@@ -31,6 +31,7 @@ body, html {
   font-size: 0.90rem;
   line-height: 1.2rem;
   background-color: #F6F6F6;
+  overflow: hidden;
 
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
