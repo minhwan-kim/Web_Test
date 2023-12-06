@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // blur img when cursor is hovering over figcaption
-    
+
     document.querySelectorAll('figcaption').forEach(caption => {
         caption.addEventListener('mouseover', () => {
             caption.previousElementSibling.classList.add('blur');
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             caption.previousElementSibling.classList.remove('blur');
         });
     });
-    
+
 
     function isProjectVisible(project) {
         if (activeFilters.length === 0) {
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const projectFilters = project.dataset.filter.split(' ');
         return activeFilters.some(filter => projectFilters.includes(filter));
     }
-    
+
 
 
     function findNextVisibleProjectIndex(direction) {
@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-    
-    
+
+
     function updateListItems() {
         listItems.forEach(item => {
             const projectId = item.id.replace('_list', '');
@@ -113,12 +113,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function applyFilters() {
         let foundVisible = false;
         let firstVisibleIndex = -1;
-    
+
         // Check each project's visibility based on the active filters
         projects.forEach((project, index) => {
             const isVisible = isProjectVisible(project);
             project.style.display = isVisible ? 'block' : 'none';
-    
+
             // Keep track of the first visible project
             if (isVisible && firstVisibleIndex === -1) {
                 firstVisibleIndex = index;
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 foundVisible = true;
             }
         });
-    
+
         // If the current project is not visible or there are no visible projects, update the index
         if (!foundVisible) {
             if (firstVisibleIndex !== -1) {
@@ -138,14 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 // If no projects are visible, perhaps hide the slideshow or show a message
             }
         }
-    
+
         // Update the display based on the current project and image indices
         showImage(currentProjectIndex, currentImageIndex);
-    
+
         updateFilterButtons();
         updateListItems();
     }
-        
+
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -180,31 +180,31 @@ document.addEventListener("DOMContentLoaded", () => {
         projects.forEach(p => p.style.display = 'none');
         const project = projects[projectIndex];
         project.style.display = 'block';
-    
+
         const figures = project.querySelectorAll('figure');
         figures.forEach(fig => fig.style.display = 'none');
         figures[imageIndex].style.display = 'block';
         figures[imageIndex].querySelector('figcaption').style.display = 'block';
-    
+
         const figure = figures[imageIndex];
         if (figure.classList.contains('dark')) {
             imageCountDisplay.style.color = 'black';
-            leftOverlay.style.cursor = "url('../images/previous.svg'), auto";
-            rightOverlay.style.cursor = "url('../images/next.svg'), auto";
+            leftOverlay.style.cursor = "url('../../Web_Test/images/previous.svg'), auto";
+            rightOverlay.style.cursor = "url('../../Web_Test/images/next.svg'), auto";
         } else {
             imageCountDisplay.style.color = 'white';
-            leftOverlay.style.cursor = "url('../images/previous_white.svg'), auto";
-            rightOverlay.style.cursor = "url('../images/next_white.svg'), auto";
+            leftOverlay.style.cursor = "url('../../Web_Test/images/previous_white.svg'), auto";
+            rightOverlay.style.cursor = "url('../../Web_Test/images/next_white.svg'), auto";
         }
-    
+
         currentProjectIndex = projectIndex; // Update the current project index
         currentImageIndex = imageIndex; // Update the current image index
-    
+
         updateImageCountDisplay(projectIndex, imageIndex); // Update the image counter display
         updateActiveListItem(projects[projectIndex].id); // Update the active state of the list item
 
     }
-    
+
     function navigateToProject(projectId) {
         const projectIndex = Array.from(projects).findIndex(p => p.id === projectId);
         if (projectIndex >= 0) {
@@ -215,14 +215,14 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error('Project with ID not found:', projectId);
         }
     }
-    
 
-    
+
+
     listItems.forEach(item => {
         item.addEventListener('click', () => {
             const projectId = item.id.replace('_list', '');
             const project = document.getElementById(projectId);
-    
+
             if (isProjectVisible(project)) {
                 // Project is active under the current filter
                 navigateToProject(projectId);
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    
+
 
 
     function navigateToLeft() {
@@ -262,5 +262,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showImage(currentProjectIndex, currentImageIndex);
 
-    
+
 });

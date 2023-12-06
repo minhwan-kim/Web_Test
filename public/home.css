@@ -52,13 +52,13 @@ body, html {
 
 .cursor-overlay.left {
   left: 0;
-  cursor: url('../images/previous_white.svg'), auto;
+  cursor: url('../../Web_Test/images/previous_white.svg'), auto;
 
 }
 
 .cursor-overlay.right {
   right: 0;
-  cursor: url('../images/next_white.svg'), auto;
+  cursor: url('../../Web_Test/images/next_white.svg'), auto;
 }
 
 
