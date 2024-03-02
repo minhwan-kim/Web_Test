@@ -101,7 +101,7 @@ h2 {
 
 .project img {
   width: 100%; /* Image fills the width of the figure */
-  height: 72vw; /* Maintain aspect ratio */
+  height: 120vw; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the area while preserving aspect ratio */
   display: block; /* Remove any default inline spacing */
   padding-left:14px;
@@ -126,7 +126,7 @@ h2 {
 /* New CSS for the image count container */
 .image-count-container {
   position: absolute;
-  top: calc(72vw + 12px);
+  top: calc(120vw + 12px);
   right: 12px;
   letter-spacing: 2px;
   text-align: right;
