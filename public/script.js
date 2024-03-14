@@ -211,16 +211,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const figure = figures[imageIndex];
         if (figure.classList.contains('dark')) {
             imageCountDisplay.style.color = 'black';
-            leftOverlay.style.cursor = "url('../images/previous.svg') 36 8, pointer";
-            rightOverlay.style.cursor = "url('../images/next.svg') 36 8, pointer";
+            leftOverlay.style.cursor = "url('../../Web_Test/images/previous.svg') 36 8, pointer";
+            rightOverlay.style.cursor = "url('../../Web_Test/images/next.svg') 36 8, pointer";
         } else if (figure.classList.contains('grey')) {
             imageCountDisplay.style.color = '#7e7e7e';
-            leftOverlay.style.cursor = "url('../images/previous.svg') 36 8, pointer";
-            rightOverlay.style.cursor = "url('../images/next.svg') 36 8, pointer";
+            leftOverlay.style.cursor = "url('../../Web_Test/images/previous.svg') 36 8, pointer";
+            rightOverlay.style.cursor = "url('../../Web_Test/images/next.svg') 36 8, pointer";
         } else {
             imageCountDisplay.style.color = 'white';
-            leftOverlay.style.cursor = "url('../images/previous_white.svg') 36 8, pointer";
-            rightOverlay.style.cursor = "url('../images/next_white.svg') 36 8, pointer";
+            leftOverlay.style.cursor = "url('../../Web_Test/images/previous_white.svg') 36 8, pointer";
+            rightOverlay.style.cursor = "url('../../Web_Test/images/next_white.svg') 36 8, pointer";
         }
     
         // Update current indices
