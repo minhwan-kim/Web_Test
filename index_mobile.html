@@ -12,7 +12,7 @@
 
 <body ondragstart="return false;" ondrop="return false;">
 <div class="intro">
-  <h2>Minhwan Kim</h2> is a New York-based independent graphic designer interested in palpable invisibility of marginalized subjects.
+  Minhwan Kim is a New York-based independent graphic designer interested in palpable invisibility of marginalized subjects.
 
   <br>
   <br>
@@ -26,192 +26,1237 @@
   <button type="button" id="sortByWeightAsc">Sort by Weight (Ascending)</button>
 <button id="sortByWeightDesc">Sort by Weight (Descending)</button>
 
-<!-- Size Sorting -->
 <button id="sortBySizeAsc">Sort by Size (Ascending)</button>
 <button id="sortBySizeDesc">Sort by Size (Descending)</button>
 
-<!-- Date Sorting -->
 <button id="sortByDateAsc">Sort by Date (Newest to Oldest)</button>
 <button id="sortByDateDesc">Sort by Date (Oldest to Newest)</button>
 </div>
- <!-- Weight Sorting -->
 
 
 
-  <main id="slideshow" >
+
+ <main id="slideshow" >
+
+  <div class="cursor-overlay left"></div>
+  <div class="cursor-overlay right"></div>
 
 
 
-    <div class="project" id="project1" data-filter="gd" data-weight="500" data-size="15" data-date="2023-01-01">
-      <figure>
-          <img src="images/FP_01.jpg" alt="Project 1 Image 1">
-          <figcaption>Caption for Image Caption for Image Caption for Image Caption for Image Caption for Image Caption for Image 1</figcaption>
-      </figure>
-      <figure>
-          <img src="images/FP_02.jpg" alt="Project 1 Image 2">
-          <figcaption>Minari Screenplay Book 
-            8″ x 11″ 320 pages, 2022. Designed in collaboration with Actual Source. Commissioned by A24.</figcaption>
-      </figure>
+<div class="project" id="project1" data-filter="book">
+  <figure>
+    <img src="images/Minari0_low.jpg" alt="Minari Screenplay Book">
+    <figcaption>Minari Screenplay Book. 8″ x 11″ 320 pages. Designed in collaboration with Actual Source.
+      Commissioned by A24 Films. <strong>2022</strong> </figcaption>
+  </figure>
 
-      <div class="image-count-container">
-        <span class="image-count">1/2</span>
-      </div>
-      <!-- More images for Project 1 -->
+  <figure class="dark">
+    <img src="images/Minari1.jpg" alt="Minari Screenplay Book">
+    <figcaption>Minari Screenplay Book. 8″ x 11″ 320 pages. Designed in collaboration with Actual Source.
+      Commissioned by A24 Films. <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/Minari2.jpg" alt="Minari Screenplay Book">
+    <figcaption>Minari Screenplay Book. 8″ x 11″ 320 pages. Designed in collaboration with Actual Source.
+      Commissioned by A24 Films. <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/Minari3.jpg" alt="Minari Screenplay Book">
+    <figcaption>Minari Screenplay Book. 8″ x 11″ 320 pages. Designed in collaboration with Actual Source.
+      Commissioned by A24 Films. <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/Minari5.jpg" alt="Minari Screenplay Book">
+    <figcaption>Minari Screenplay Book. 8″ x 11″ 320 pages. Designed in collaboration with Actual Source.
+      Commissioned by A24 Films. <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
   </div>
-  <!-- More projects -->
+
+</div>
+
+<div class="project" id="project2" data-filter="book mh">
+  <figure>
+    <img src="images/ImageRIP_0.jpg" alt="Image RIP: After Printing, Work & Planet Earth">
+    <figcaption>Image RIP: After Printing, Work & Planet Earth. 170 x 230 mm, 304 pages. Designed in collaboration
+      with Geoff Han, Immanuel Yang, Ming Bai. <strong>2023</strong> </figcaption>
+  </figure>
+
+  <figure class>
+    <img src="images/ImageRIP_1.jpg" alt="Image RIP: After Printing, Work & Planet Earth">
+    <figcaption>Image RIP: After Printing, Work & Planet Earth. 170 x 230 mm, 304 pages. Designed in collaboration
+      with Geoff Han, Immanuel Yang, Ming Bai. <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/ImageRIP_2.jpg" alt="Image RIP: After Printing, Work & Planet Earth">
+    <figcaption>Image RIP: After Printing, Work & Planet Earth. 170 x 230 mm, 304 pages. Designed in collaboration
+      with Geoff Han, Immanuel Yang, Ming Bai. <strong>2023</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/ImageRIP_3.jpg" alt="Image RIP: After Printing, Work & Planet Earth">
+    <figcaption>Image RIP: After Printing, Work & Planet Earth. 170 x 230 mm, 304 pages. Designed in collaboration
+      with Geoff Han, Immanuel Yang, Ming Bai. <strong>2023</strong> </figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project3" data-filter="book">
+  <figure class="dark">
+    <img src="images/Ungers_0.jpg"
+      alt="negotiating ungers 2. the oberhausen institute and the materiality of the social">
+    <figcaption>negotiating ungers 2. the oberhausen institute and the materiality of the social. 120 x 170 mm, 236
+      pages. Designed in collaboration with Geoff Han. <br> Commissioned by Common Room. <strong class="bl">2023</strong>
+    </figcaption>
+  </figure>
+
+  <figure class>
+    <img src="images/Ungers_1.jpg"
+      alt="negotiating ungers 2. the oberhausen institute and the materiality of the social">
+    <figcaption>negotiating ungers 2. the oberhausen institute and the materiality of the social. 120 x 170 mm, 236
+      pages. Designed in collaboration with Geoff Han.  <br> Commissioned by Common Room. <strong>2023</strong>
+    </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/Ungers_2_bg.jpg"
+      alt="negotiating ungers 2. the oberhausen institute and the materiality of the social">
+    <figcaption>negotiating ungers 2. the oberhausen institute and the materiality of the social. 120 x 170 mm, 236
+      pages. Designed in collaboration with Geoff Han.  <br> Commissioned by Common Room. <strong class="bl">2023</strong>
+    </figcaption>
+  </figure>
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project4" data-filter="book id cc">
+
+  <figure>
+    <img src="images/FF_0.jpg" alt="Farshad Farzankia’s solo exhibition Ten Thousand Eyes">
+    <figcaption>Exhibition Identity for Farshad Farzankia’s Solo Show <i>
+        < Ten Thousand Eyes>
+      </i> <br>Designed comprehensive materials (poster, catalogue, merchandise) and motion graphics incorporated
+      creative coding. Designed in collaboration with Hyung Cho. <strong>2022</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/FF_1.jpg" alt="Farshad Farzankia’s solo exhibition Ten Thousand Eyes">
+    <figcaption>Exhibition Identity for Farshad Farzankia’s Solo Show <i>
+        < Ten Thousand Eyes>
+      </i> <br>Designed comprehensive materials (poster, catalogue, merchandise) and motion graphics incorporated
+      creative coding. Designed in collaboration with Hyung Cho. <strong>2022</strong> </figcaption>
+  </figure>
+
+  <figure class="grey">
+    <img src="images/FF_2.jpg" alt="Farshad Farzankia’s solo exhibition Ten Thousand Eyes">
+    <figcaption>Exhibition Identity for Farshad Farzankia’s Solo Show <i>
+        < Ten Thousand Eyes>
+      </i> <br>Designed comprehensive materials (poster, catalogue, merchandise) and motion graphics incorporated
+      creative coding. Designed in collaboration with Hyung Cho. <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+  <figure class="grey">
+    <img src="images/FF_3.jpg" alt="Farshad Farzankia’s solo exhibition Ten Thousand Eyes">
+    <figcaption>Exhibition Identity for Farshad Farzankia’s Solo Show <i>
+        < Ten Thousand Eyes>
+      </i> <br>Designed comprehensive materials (poster, catalogue, merchandise) and motion graphics incorporated
+      creative coding. Designed in collaboration with Hyung Cho. <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+
+
+  <figure class="grey">
+    <img src="images/FF_4.jpg" alt="Farshad Farzankia’s solo exhibition Ten Thousand Eyes">
+    <figcaption>Exhibition Identity for Farshad Farzankia’s Solo Show <i>
+        < Ten Thousand Eyes>
+      </i> <br>Designed comprehensive materials (poster, catalogue, merchandise) and motion graphics incorporated
+      creative coding. Designed in collaboration with Hyung Cho. <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/FF_5.jpg" alt="Farshad Farzankia’s solo exhibition Ten Thousand Eyes">
+    <figcaption>Exhibition Identity for Farshad Farzankia’s Solo Show <i>
+        < Ten Thousand Eyes>
+      </i> <br>Designed comprehensive materials (poster, catalogue, merchandise) and motion graphics incorporated
+      creative coding. Designed in collaboration with Hyung Cho. <strong>2022</strong> </figcaption>
+  </figure>
+  <!-- 
+  <figure>
+    <img src="images/FF_5.jpg" alt="Farshad Farzankia’s solo exhibition Ten Thousand Eyes">
+    <iframe
+    src="https://player.vimeo.com/video/877352282?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+    <figcaption>Exhibition Identity for Farshad Farzankia’s Solo Show  <i> < Ten Thousand Eyes > </i>  <br>Designed comprehensive materials (poster, catalogue, merchandise) and motion graphics incorporated creative coding. Designed in collaboration with Hyung Cho. <strong>2022</strong> </figcaption>
+  </figure> -->
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project5" data-filter="id cc xl mh data">
+
+  <!-- 
+  <figure>
+    <img src="images/AAO_1.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show">
+    <figcaption>Exhibition concept/identity for Yale Graphic design MFA thesis show <i>ALL AT ONCE.</i> <br> In collaboration with Milo Bonacci, Furqan Jawed, Mengyi Qian, Bianca Ibarlucea, and Jun Jung. <strong>2021</strong> </figcaption>
+  </figure> -->
+
+
+
+  <figure>
+    <!-- <img src="images/rb_check.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show"> -->
+    <div class="iframe-overlay"></div>
+    <iframe
+      src="https://player.vimeo.com/video/623191751?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+    <figcaption>Exhibition concept/identity for Yale Graphic design MFA thesis show <i>ALL AT ONCE.</i> <br> In
+      collaboration with Milo Bonacci, Furqan Jawed, Mengyi Qian, Bianca Ibarlucea, and Jun Jung.
+      <strong>2021</strong> </figcaption>
+  </figure>
+
+
+
+  <figure>
+    <!-- <img src="images/rb_check_2.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show"> -->
+    <div class="iframe-overlay"></div>
+    <iframe
+      src="https://player.vimeo.com/video/622212266?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+    <figcaption>I developed a program using Python and the OpenCV library for the exhibition, enabling simultaneous
+      multi-color chroma keying.
+      <strong>2021</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <!-- <img src="images/rb_check_3.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show"> -->
+    <div class="iframe-overlay"></div>
+    <iframe
+      src="https://player.vimeo.com/video/626205169?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+    <figcaption>I developed a program using Python and the OpenCV library for the exhibition, enabling simultaneous
+      multi-color chroma keying.
+      <strong>2021</strong> </figcaption>
+  </figure>
+
+
+  <figure>
+    <img src="images/AAO_0.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show">
+    <figcaption>Exhibition concept/identity for Yale Graphic design MFA thesis show <i>ALL AT ONCE.</i> <br> In
+      collaboration with Milo Bonacci, Furqan Jawed, Mengyi Qian, Bianca Ibarlucea, and Jun Jung.
+      <strong>2021</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/AAO_2.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show">
+    <figcaption>Exhibition concept/identity for Yale Graphic design MFA thesis show <i>ALL AT ONCE.</i> <br> In
+      collaboration with Milo Bonacci, Furqan Jawed, Mengyi Qian, Bianca Ibarlucea, and Jun Jung.
+      <strong>2021</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/AAO_4.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show">
+    <figcaption>Exhibition concept/identity for Yale Graphic design MFA thesis show <i>ALL AT ONCE.</i> <br> In
+      collaboration with Milo Bonacci, Furqan Jawed, Mengyi Qian, Bianca Ibarlucea, and Jun Jung.
+      <strong>2021</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <!-- <img src="images/rb_check_4.jpg" alt="All at Once. Yale Graphic Design MFA Thesis Show"> -->
+    <div class="iframe-overlay"></div>
+    <iframe
+      src="https://player.vimeo.com/video/624182897?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+    
+    <figcaption>Found moments from the exhibition.
+      <strong>2021</strong> </figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+
+</div>
+
+
+<div class="project" id="project6" data-filter="id cc">
+  <figure class>
+    <img src="images/NikeFF_1.jpg" alt="Nike Future Movement Campaign identity design.">
+    <figcaption>Nike Future Movement Campaign. In Collaboration with New Studio. <strong>2022</strong> </figcaption>
+  </figure>
+
+  <figure class>
+    <img src="images/NikeFF_2.jpg" alt="Nike Future Movement Campaign identity design.">
+    <figcaption>Nike Future Movement Campaign. In Collaboration with New Studio. <strong>2022</strong> </figcaption>
+  </figure>
+
+  <figure class>
+    <img src="images/NikeFF_3.jpg" alt="Nike Future Movement Campaign identity design.">
+    <figcaption>Developed a custom Python program for advanced image propagation. <strong>2022</strong> </figcaption>
+  </figure>
+
+  <figure class>
+    <img src="images/NikeFF_5.jpg" alt="Nike Future Movement Campaign identity design.">
+    <figcaption>Final Campaign design in use. <strong>2022</strong> </figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project7" data-filter="id type">
+  <figure class="dark">
+    <img src="images/OpenYY_1.jpg" alt="OPEN YY Rebranding">
+    <figcaption>Open YY rebranding (formerly 'TheOpen Product'.) In Collaboration with Mianwei Wang. <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/OpenYY_2_2.jpg" alt="OPEN YY Rebranding">
+    <figcaption>Open YY rebranding (formerly 'TheOpen Product'.) In Collaboration with Mianwei Wang. <strong>2023</strong> </figcaption>
+  </figure>
+
+  <figure class="grey">
+    <img src="images/OpenYY_2.jpg" alt="OPEN YY Rebranding">
+    <figcaption>New ‘Open YY’ logo in use, outfit featured below are designed by in-house designers. <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+
+  <figure>
+    <img src="images/OpenYY_3.jpg" alt="OPEN YY Rebranding">
+    <figcaption>New ‘Open YY’ logo in use. <strong>2023</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/OpenYY_4.jpg" alt="OPEN YY Rebranding">
+    <figcaption>New ‘Open YY’ logo in use. <strong>2023</strong> </figcaption>
+  </figure>
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project8" data-filter="ixd data mh">
+
+  <figure class="dark">
+    <div class="iframe-overlay"></div>
+    <iframe
+      src="https://player.vimeo.com/video/914774803?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+    <figcaption>
+      Verizon One Digital Design System. <strong class="bl">2023</strong>
+    </figcaption>
+
+
+  </figure>
+
+  <figure class="dark fade">
+    <img src="images/od_2_2.gif" alt="Verizon One Digital Design System">
+    <figcaption>
+      Verizon One Digital Design System. One digital design system adapts seamlessly across various screen
+      sizes (smartphone to 40” touch screen), optimizing customer interactions for an effortless and efficient
+      in-store experience.
+    </figcaption>
+  </figure>
+
+  <figure class="grey">
+    <img src="images/od_7.jpg" alt="Verizon One Digital Design System">
+    <figcaption class="blob_w">One Digital design system delivers consistent design elements and interactions,
+      optimizing the
+      customer experience across varying screen sizes.
+    </figcaption>
+  </figure>
+
+  <figure class="dark fade">
+    <img src="images/od_3.jpg" alt="Verizon One Digital Design System">
+    <figcaption>One Digital design system comprises two key parts: an “Expansion Pack” of readily available
+      components for designers and developers, and a comprehensive online guideline featuring detailed information
+      and use cases.
+    </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/od_4.jpg" alt="Verizon One Digital Design System">
+    <figcaption>One Digital design system comprises two key parts: an “Expansion Pack” of readily available
+      components for designers and developers, and a comprehensive online guideline featuring detailed information
+      and use cases.
+    </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/od_8.jpg" alt="Verizon One Digital Design System">
+    <figcaption>One Digital design system delivers consistent design elements and interactions, optimizing the
+      customer experience across varying screen sizes.
+    </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/od_5.jpg" alt="Verizon One Digital Design System">
+    <figcaption>Sample screens designed by using One Digital design system components. From smartphones to large
+      touchscreens, the system delivers consistent design elements and interactions, optimizing the customer
+      experience across varying screen sizes.
+    </figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project9" data-filter="ixd mh">
+  <figure class="fade">
+    <img src="images/vz_ixd_0.jpg" alt="Verizon myPlan Discovery Tool">
+    <figcaption> Verizon myPlan Discovery Tool <strong>2023</strong>
+    </figcaption>
+  </figure>
+  <figure class="dark fade">
+    <img src="images/vz_ixd_1.jpg" alt="Verizon myPlan Discovery Tool">
+    <figcaption>Verizon myPlan Discovery Tool <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+  <figure class="dark fade">
+    <img src="images/vz_ixd_1_2.jpg" alt="Verizon myPlan Discovery Tool">
+    <figcaption>Verizon myPlan Discovery Tool <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+  <figure class="fade dark">
+    <img src="images/vz_ixd_2.jpg" alt="Verizon Complete Home Interactive Tool">
+    <figcaption>Verizon Complete Home Interactive Tool <strong class="bl">2023</strong> </figcaption>
+
+  </figure>
+
+  <figure class="dark fade">
+    <img src="images/vz_ixd_3.jpg" alt="Verizon Complete Home Interactive Tool">
+    <figcaption>Verizon Complete Home Interactive Tool <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+
+  <figure class="dark">
+    <img src="images/vz_ixd_5_2.jpg" alt="Verizon myPlan Discovery Tool">
+    <figcaption>Verizon myPlan Discovery Tool <strong class="bl">2023</strong> </figcaption>
+
+  </figure>
+
+
+  <figure class="dark">
+    <div class="iframe-overlay"></div>
+    <iframe
+      src="https://player.vimeo.com/video/917369994?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+    <figcaption> Verizon Business SMB Persona Experience <strong class="bl">2023</strong>
+    </figcaption>
+
+  </figure>
+
+  <figure class="dark">
+    <img src="images/vz_ixd_6.jpg" alt="Verizon Device Showcase 3.0">
+    <figcaption>Verizon Device Showcase 3.0 <strong class="bl">2022</strong> </figcaption>
+
+  </figure>
+
+  <figure class="dark">
+    <img src="images/vz_ixd_7.jpg" alt="Verizon Promo Tool">
+    <figcaption>Verizon Promo Tool <strong class="bl">2023</strong> </figcaption>
+
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+
+</div>
+
+
+<div class="project" id="project10" data-filter="id">
+  <figure class="dark">
+    <img src="images/vz_showcase_1.jpg" alt="Verizon Showcase Platform Art Direction">
+    <figcaption>Verizon Showcase Platform Art Direction. <strong class="bl">2022-ongoing</strong> </figcaption>
+
+  </figure>
+  <figure class="dark">
+    <img src="images/vz_showcase_2.jpg" alt="Verizon Brand Accessories Showcase">
+    <figcaption>Verizon Brand Accessories Showcase <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/vz_showcase_3.jpg" alt="Magsafe Accessories Showcase">
+    <figcaption>Magsafe Accessories Showcase <strong class="bl">2023</strong> </figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/vz_showcase_4.jpg" alt="Samsung Galaxy Z Fold4 Showcase">
+    <figcaption>Samsung Galaxy Z Fold4 Showcase <strong class="bl">2022</strong> </figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+
+</div>
+
+<div class="project" id="project11" data-filter="book">
+
+
+  <figure class="dark">
+    <img src="images/Lisbon_0.jpg" alt="Disquietude. architecture and energy in portugal
+    ">
+    <figcaption>Disquietude. architecture and energy in portugal. Designed in collaboration with Geoff Han, Immanuel Yang.<strong class="bl">2023</strong> </figcaption>
+
+  </figure>
+
+  <figure class="dark">
+    <img src="images/Lisbon_1.jpg" alt="Disquietude. architecture and energy in portugal
+    ">
+    <figcaption>Disquietude. architecture and energy in portugal. Designed in collaboration with Geoff Han, Immanuel Yang.<strong class="bl">2023</strong> </figcaption>
+
+  </figure>
+
+
+  <figure>
+    <img src="images/Lisbon_3.jpg" alt="Disquietude. architecture and energy in portugal
+    ">
+    <figcaption>Disquietude. architecture and energy in portugal. Designed in collaboration with Geoff Han, Immanuel Yang.<strong>2023</strong> </figcaption>
+
+  </figure>
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project12" data-filter="book">
+
+
+  <figure>
+    <img src="images/Thesis_1.jpg" alt="I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.">
+    <figcaption>I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.
+      279.4 x 210 mm, 11″ x 8.27″ 256 pages, 2021. Offset printing, printed entirely with a translucent, yellow-tinted varnish. <strong>2021</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/Thesis_0.jpg" alt="I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.">
+    <figcaption>I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.
+      279.4 x 210 mm, 11″ x 8.27″ 256 pages, 2021. Offset printing, printed entirely with a translucent, yellow-tinted varnish. <strong>2021</strong> </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/Thesis_4.jpg" alt="I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.">
+    <figcaption>I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.
+      279.4 x 210 mm, 11″ x 8.27″ 256 pages, 2021. Offset printing, printed entirely with a translucent, yellow-tinted varnish. <strong>2021</strong> </figcaption>
+  </figure>
+
+
+  <!-- <figure>
+    <img src="images/Thesis_5.jpg" alt="I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.">
+    <figcaption>I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given. 
+      279.4 x 210 mm, 11″ x 8.27″ 256 pages, 2021. Offset printing, printed entirely with a translucent, yellow-tinted varnish. <strong>2021</strong> </figcaption>
+  </figure> -->
+
+  <figure class="dark">
+    <img src="images/Thesis_5.gif" alt="I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.">
+    <figcaption>I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.
+      279.4 x 210 mm, 11″ x 8.27″ 256 pages, 2021. Offset printing, printed entirely with a translucent, yellow-tinted varnish. <strong class="bl">2021</strong> </figcaption>
+  </figure>
+
+  <figure class="pale">
+    <div class="iframe-overlay"></div>
+    <iframe
+      src="https://player.vimeo.com/video/920832098?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+
+    <figcaption>I think survival is easy: you just keep moving forward with what you have, or what’s left of what you were given.
+      279.4 x 210 mm, 11″ x 8.27″ 256 pages, 2021. Offset printing, printed entirely with a translucent, yellow-tinted varnish. <strong>2021</strong> </figcaption>
+  </figure>
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project13" data-filter="else xl mh">
+
+
+  <figure>
+    <img src="images/FP_01_4.jpg" alt="Found Presence, A site-specific, temporal mark made with reflective spray,">
+    <figcaption>Found Presence, A site-specific, temporal mark made with reflective spray, incorporating data collected from Helsinki, Finland.<strong>2017</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/FP_02_2.jpg" alt="Found Presence, A site-specific, temporal mark made with reflective spray,">
+    <figcaption>Found Presence, A site-specific, temporal mark made with reflective spray, incorporating data collected from Helsinki, Finland.<strong>2017</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/FP_03.jpg" alt="Found Presence, A site-specific, temporal mark made with reflective spray,">
+    <figcaption>Found Presence, A site-specific, temporal mark made with reflective spray, incorporating data collected from Helsinki, Finland.<strong>2017</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/FP_05.jpg" alt="Found Presence, A site-specific, temporal mark made with reflective spray,">
+    <figcaption>Found Presence, A site-specific, temporal mark made with reflective spray, incorporating data collected from Helsinki, Finland.<strong>2017</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/FP_06.jpg" alt="Found Presence, A site-specific, temporal mark made with reflective spray,">
+    <figcaption>Found Presence, A site-specific, temporal mark made with reflective spray, incorporating data collected from Helsinki, Finland.<strong>2017</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/FP_08.gif" alt="Found Presence, A site-specific, temporal mark made with reflective spray,">
+    <figcaption>Found Presence, A site-specific, temporal mark made with reflective spray, incorporating data collected from Helsinki, Finland.<strong>2017</strong></figcaption>
+  </figure>
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project14" data-filter="id type eph">
+
+
+  <figure class="dark">
+    <img src="images/QS_1.jpg" alt="Conference identity for Queering Space">
+    <figcaption>Queer(ing) Space Exhibition Identity <strong class="bl">2023</strong></figcaption>
+  </figure>
+
+
+  <figure class="dark">
+    <img src="images/QS_2.png" alt="Conference identity for Queering Space">
+    <figcaption>Designed exhibition identity and custom typeface that encapsulates the themes of ‘Fitting in’ and ‘Passing,’ aligning with the exhibition’s narrative of space transformation.  <strong class="bl">2023</strong></figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/QS_3 copy.jpg" alt="Conference identity for Queering Space">
+    <figcaption>Custom typeface that encapsulates the themes of ‘Fitting in’ and ‘Passing,’ aligning with the exhibition’s narrative of space transformation.  <strong class="bl">2023</strong></figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/QS_2.jpg" alt="Conference identity for Queering Space">
+    <figcaption>Custom typeface that encapsulates the themes of ‘Fitting in’ and ‘Passing,’ aligning with the exhibition’s narrative of space transformation.  <strong class="bl">2023</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project15" data-filter="id type ixd cc">
+
+
+  <figure>
+    <img src="images/THNE_0.jpg" alt="To Hear No Echo, Exhibition identity designed for the Yale School of Art M.F.A. Sculpture Thesis show. In collaboration with Mengqi Qian.">
+    <figcaption>To Hear No Echo. Exhibition identity designed for the Yale School of Art M.F.A. Sculpture Thesis show. In collaboration with Mengqi Qian. <strong>2021</strong></figcaption>
+  </figure>
+
+
+
+  <figure >
+    <!-- <img src="images/THNE_0_bg2.jpg" alt="To Hear No Echo, Exhibition identity designed for the Yale School of Art M.F.A. Sculpture Thesis show. In collaboration with Mengqi Qian."> -->
+    <div class="iframe-overlay"></div>
+    <iframe
+    src="https://player.vimeo.com/video/628727654?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+  <figcaption>To Hear No Echo. Exhibition identity designed for the Yale School of Art M.F.A. Sculpture Thesis show. In collaboration with Mengqi Qian. <strong>2021</strong></figcaption>
+</figure>
+
+
+
+<figure class="landscape dark">
   
+  <img src="images/THNE_1.gif" alt="Custom typeface designed for the exhibition. In collaboration with Mengqi Qian.">
+  <figcaption>Custom typeface designed for the exhibition. In collaboration with Mengqi Qian. <strong class="bl">2021</strong></figcaption>
+</figure>
 
-  <div class="project" id="project2" data-filter="hci" data-weight="600" data-size="12" data-date="2022-01-01">
-    <figure>
-        <img src="images/Thesis_0.jpg" alt="Project 1 Image 1">
-        <figcaption>An older (medieval) convention is the manicule (pointing hand, 👈). Pedro Reinel in c. 1504 first used the fleur-de-lis as indicating north in a compass rose; the convention of marking the eastern direction with a cross is older (medieval).[2] Use of the arrow symbol does not appear to pre-date the 18th century. An early arrow symbol is found in an illustration of Bernard Forest de Bélidor's treatise L'architecture hydraulique, printed in France in 1737. The arrow is here used to illustrate the direction of the flow of water and of the water wheel's rotation. At about the same time, arrow symbols were used to indicate the flow of rivers in maps.[3]
-        </figcaption>
-    </figure>
-    <figure>
-        <img src="images/Thesis_1.jpg" alt="Project 1 Image 2">
-        <figcaption>Caption for Image 2</figcaption>
-    </figure>
 
-    <figure>
-      <img src="images/Thesis_2.jpg" alt="Project 1 Image 2">
-      <figcaption>Caption for Image 2</figcaption>
+<figure class="landscape dark">
+  
+  <img src="images/THNE_2.png" alt="Custom typeface designed for the exhibition. In collaboration with Mengqi Qian.">
+  <figcaption>Custom typeface designed for the exhibition. In collaboration with Mengqi Qian. <strong class="bl">2021</strong></figcaption>
+</figure>
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project16" data-filter="id eph">
+
+
+  <figure>
+    <img src="images/JY_0.jpg" alt="Conference identity for Queering Space">
+    <figcaption>Branding for Detroit-based sculptor Jaeyeon Park. <strong>2020</strong></figcaption>
+  </figure>
+
+  <figure class="portrait yellow fade">
+    <img src="images/jos.jpg" alt="Project 1 Image 1">
+    <figcaption>Poster for Jaeyeon Park's Open Studio <strong>2020</strong></figcaption>
+  </figure>
+
+  <!-- <figure class="yellow fade">
+    <img src="images/jos_2.jpg" alt="Project 1 Image 1">
+    <figcaption>Poster for Jaeyeon Park's Open Studio <strong>2020</strong></figcaption>
+  </figure> -->
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project17" data-filter="eph">
+  <figure class="portrait lightyellow">
+    <img src="images/awoke_low.jpg" alt="Poster for the film ‘Awoke,’">
+    <figcaption>Poster for the film ‘Awoke,’ directed by Jaeik Jung and Taesoo Seo. The poster was featured at the
+      22nd Jeonju International Film Festival. <strong>2021</strong></figcaption>
   </figure>
 
   <div class="image-count-container">
     <span class="image-count">1/2</span>
   </div>
-    <!-- More images for Project 1 -->
 </div>
 
-
-
-<div class="project" id="project3" data-filter="gd PP" data-weight="900" data-size="11" data-date="2010-01-01">
-  <figure>
-      <img src="images/smi_01.jpg" alt="Project 1 Image 1">
-      <figcaption>Caption for Image 1</figcaption>
-  </figure>
+<div class="project" id="project18" data-filter="id">
   <figure class="dark">
-      <img src="images/smi_02.jpg" alt="Project 1 Image 2">
-      <figcaption>Caption for Image 2</figcaption>
+    <img src="images/fof_1.jpg" alt="Identity designed for an artist collective 'Friend of a friend'">
+    <figcaption>Visual identity designed for an artist collective ‘Friend of a Friend.’ In Collaboration with Mianwei Wang. Korean Typeface used in the identity is designed by Harin Jung. <strong class="bl">2023</strong></figcaption>
   </figure>
 
-  <figure>
-    <img src="images/smi_03.jpg" alt="Project 1 Image 2">
-    <figcaption>Caption for Image 2</figcaption>
-</figure>
-
-<div class="image-count-container">
-  <span class="image-count">1/2</span>
-</div>
-  <!-- More images for Project 1 -->
-</div>
-
-<div class="project" id="project4" data-filter="gd PP" data-weight="1500" data-size="125" data-date="2023-01-05">
-  <figure>
-      <img src="images/UO2_1.jpg" alt="Project 1 Image 1">
-      <figcaption>Caption for Image 1</figcaption>
-  </figure>
-
-  <figure>
-    <img src="images/UO2_4.jpg" alt="Project 1 Image 2">
-    <figcaption>Caption for Image 2</figcaption>
-</figure>
-
-<div class="image-count-container">
-  <span class="image-count">1/2</span>
-</div>
-  <!-- More images for Project 1 -->
-</div>
-
-
-<div class="project" id="project5" data-filter="hci"data-weight="502" data-size="15123" data-date="2023-02-01">
-  <figure>
-      <img src="images/VFI_2.jpg" alt="Project 1 Image 1">
-      <figcaption>Caption for Image 1</figcaption>
-  </figure>
   <figure class="dark">
-      <img src="images/VFI_0.jpg" alt="Project 1 Image 2">
-      <figcaption>Caption for Image 2</figcaption>
+    <img src="images/fof_2.jpg" alt="Identity designed for an artist collective 'Friend of a friend'">
+    <figcaption>Visual identity designed for an artist collective ‘Friend of a Friend.’ In Collaboration with Mianwei Wang. Korean Typeface used in the identity is designed by Harin Jung. <strong class="bl">2023</strong></figcaption>
   </figure>
 
   <div class="image-count-container">
     <span class="image-count">1/2</span>
   </div>
-
-  <!-- More images for Project 1 -->
 </div>
 
 
-
-<div class="project" id="project6" data-filter="hci" data-weight="5300" data-size="125" data-date="2023-01-01">
-  <figure>
-      <img src="images/NikeFF_1.jpg" alt="Project 1 Image 1">
-      <figcaption>Caption for Image 1</figcaption>
+<div class="project" id="project19" data-filter="else heavy mh">
+  <figure class="grey">
+    <img src="images/UO_1.jpg" alt="Useful Object">
+    <figcaption> Useful Objects <strong class="bl">2021</strong></figcaption>
   </figure>
-  <figure class="dark">
-      <img src="images/NikeFF_2.jpg" alt="Project 1 Image 2">
-      <figcaption>Caption for Image 2</figcaption>
+
+  <figure class="grey">
+  <img src="images/UO_0.jpg" alt="Useful Object">
+  <figcaption> Useful Objects revisits the historical perception of Immigrants through a framing of “Usefulness” by presenting the history of Japanese Barberry-dispossessed of its cultural use- in an effort to reclaim its original ornamental value and purpose.<strong class="bl">2021</strong></figcaption>
+</figure>
+
+<figure class="grey">
+  <img src="images/UO_2.jpg" alt="Useful Object">
+  <figcaption> Useful Objects revisits the historical perception of Immigrants through a framing of “Usefulness” by presenting the history of Japanese Barberry-dispossessed of its cultural use- in an effort to reclaim its original ornamental value and purpose.<strong class="bl">2021</strong></figcaption>
+</figure>
+
+<figure class="grey">
+  <img src="images/UO_3.jpg" alt="Useful Object">
+  <figcaption> Useful Objects revisits the historical perception of Immigrants through a framing of “Usefulness” by presenting the history of Japanese Barberry-dispossessed of its cultural use- in an effort to reclaim its original ornamental value and purpose.<strong class="bl">2021</strong></figcaption>
+</figure>
+
+<figure class="grey">
+  <img src="images/UO2_4.jpg" alt="Useful Object">
+  <figcaption> Useful Objects revisits the historical perception of Immigrants through a framing of “Usefulness” by presenting the history of Japanese Barberry-dispossessed of its cultural use- in an effort to reclaim its original ornamental value and purpose.<strong class="bl">2021</strong></figcaption>
+</figure>
+
+<figure class="grey">
+  <img src="images/UO2_0.jpg" alt="Useful Object">
+  <figcaption> Useful Objects revisits the historical perception of Immigrants through a framing of “Usefulness” by presenting the history of Japanese Barberry-dispossessed of its cultural use- in an effort to reclaim its original ornamental value and purpose.<strong class="bl">2021</strong></figcaption>
+</figure>
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project20" data-filter="else xl heavy">
+  <figure>
+    <img src="images/SFFB_0.jpg" alt="Spring Forward Fall Back">
+    <figcaption>Spring Forward, Fall Back. In Collaboration with Nick Massarelli and  Mianwei Wang.<strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/SFFB_1.jpg" alt="Spring Forward Fall Back">
+    <figcaption>Spring Forward, Fall Back. In Collaboration with Nick Massarelli and  Mianwei Wang.<strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/SFFB_2.jpg" alt="Spring Forward Fall Back">
+    <figcaption>Spring Forward, Fall Back. In Collaboration with Nick Massarelli and  Mianwei Wang.<strong>2020</strong></figcaption>
   </figure>
 
   <div class="image-count-container">
     <span class="image-count">1/2</span>
   </div>
-  <!-- More images for Project 1 -->
 </div>
 
 
 
-<div class="project" id="project7" data-filter="hci" data-weight="52300" data-size="153" data-date="2023-01-01">
-  <figure class="dark">
-      <img src="images/Ethos_0.jpg" alt="Project 1 Image 1">
-      <figcaption>Caption for Image 1</figcaption>
+<div class="project" id="project21" data-filter="else xl">
+  <figure>
+    <img src="images/smi_01.jpg" alt="I hope you find me well, 200501.smi">
+    <figcaption>I hope you find me well, 200501.smi<strong>2020</strong></figcaption>
   </figure>
+
+  <figure>
+    <img src="images/smi_02.jpg" alt="I hope you find me well, 200501.smi">
+    <figcaption>I hope you find me well, 200501.smi<strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/smi_03.jpg" alt="I hope you find me well, 200501.smi">
+    <figcaption>I hope you find me well, 200501.smi<strong>2020</strong></figcaption>
+  </figure>
+
+  <figure class="black">
+    <div class="iframe-overlay"></div>
+    <iframe
+    src="https://player.vimeo.com/video/552196635?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+
+    <figcaption>I hope you find me well, 200501.smi<strong>2020</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project22" data-filter="eph">
+
+
+  <figure>
+    <img src="images/YP_0.jpg" alt="Yale School of Art Photograpgy department spring 2021 visiting lectures">
+    <figcaption>Yale School of Art Photograpgy department spring 2021 visiting lectures <strong>2021</strong></figcaption>
+  </figure>
+
+  <figure class="black portrait">
+    <img src="images/YP_3.gif" alt="Yale School of Art Photograpgy department spring 2021 visiting lectures">
+    <figcaption>Yale School of Art Photograpgy department spring 2021 visiting lectures <strong>2021</strong></figcaption>
+  </figure>
+
+  <figure class=" black">
+    <img src="images/YP_1.jpg" alt="Yale School of Art Photograpgy department spring 2021 visiting lectures">
+    <figcaption>Yale School of Art Photograpgy department spring 2021 visiting lectures <strong>2021</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project23" data-filter="else heavy">
+
+  <figure>
+    <img src="images/for_1.jpg" alt="Forgetfulness">
+    <figcaption>Forgetfulness <strong>2018</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/for_2.jpg" alt="Forgetfulness">
+    <figcaption>Forgetfulness <strong>2018</strong></figcaption>
+  </figure>
+
+  <figure class="grey">
+    <div class="iframe-overlay"></div>
+    <iframe
+    src="https://player.vimeo.com/video/887833067?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+
+    <figcaption>Forgetfulness <strong class="bl">2018</strong></figcaption>
+  </figure>
+
+
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project24" data-filter="type">
+
   <figure class="dark">
-      <img src="images/Ethos_1.jpg" alt="Project 1 Image 2">
-      <figcaption>Caption for Image 2</figcaption>
+    <img src="images/Ethos_0.jpg" alt="Ethos, Revival typeface based on the original drawings of Old Style Antique No. 7.">
+    <figcaption>Ethos, Revival typeface based on the original drawings of Old Style Antique No. 7. <strong class="bl">2020</strong></figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/Ethos_1.jpg" alt="Ethos, Revival typeface based on the original drawings of Old Style Antique No. 7.">
+    <figcaption>Ethos, Revival typeface based on the original drawings of Old Style Antique No. 7. <strong class="bl">2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/Ethos_2.jpg" alt="Ethos, Revival typeface based on the original drawings of Old Style Antique No. 7.">
+    <figcaption>Ethos in use. Featured publication in the photo is Paprika! Volume 6, Issue 5 < Luck, Fate, or Happy Accident? >  designed with Mengjie Liu <strong>2020</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project25" data-filter="book">
+
+  <figure>
+    <img src="images/pp_1.jpg" alt="While you are still high on popper,">
+    <figcaption>While You Are Still High On Poppers: An Anthology on East Asian Masculinity. 115 × 185 mm, 283pp, Laser Print. <strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/pp_2.jpg" alt="While you are still high on popper,">
+    <figcaption>While You Are Still High On Poppers: An Anthology on East Asian Masculinity. 115 × 185 mm, 283pp, Laser Print. <strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/pp_3.jpg" alt="While you are still high on popper,">
+    <figcaption>While You Are Still High On Poppers: An Anthology on East Asian Masculinity. 115 × 185 mm, 283pp, Laser Print. <strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/pp_4.jpg" alt="While you are still high on popper,">
+    <figcaption>While You Are Still High On Poppers: An Anthology on East Asian Masculinity. 115 × 185 mm, 283pp, Laser Print. <strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/pp_5.jpg" alt="While you are still high on popper,">
+    <figcaption>While You Are Still High On Poppers: An Anthology on East Asian Masculinity. 115 × 185 mm, 283pp, Laser Print. <strong>2020</strong></figcaption>
+  </figure>
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project26" data-filter="type">
+
+  <figure class="dark">
+    <img src="images/JC_01.jpg" alt="Juicy: A Custom Typeface Made for the Anthology 'While You Are Still High on Poppers'">
+    <figcaption>Juicy: A Custom Typeface Made for the Anthology 'While You Are Still High on Poppers' <strong class="bl">2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/JC_2.jpg" alt="Juicy: A Custom Typeface Made for the Anthology 'While You Are Still High on Poppers'">
+    <figcaption>Juicy: A Custom Typeface Made for the Anthology 'While You Are Still High on Poppers' <strong>2020</strong></figcaption>
   </figure>
   <figure>
-    <img src="images/Ethos_2.jpg" alt="Project 1 Image 2">
-    <figcaption>Caption for Image 2</figcaption>
-</figure>
+    <img src="images/JC_3.jpg" alt="Juicy: A Custom Typeface Made for the Anthology 'While You Are Still High on Poppers'">
+    <figcaption>Juicy: A Custom Typeface Made for the Anthology 'While You Are Still High on Poppers' <strong>2020</strong></figcaption>
+  </figure>
 
-<div class="image-count-container">
-  <span class="image-count">1/2</span>
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
 </div>
-  <!-- More images for Project 1 -->
+
+<div class="project" id="project27" data-filter="xl heavy else">
+
+  <figure class="grey portrait syss">
+    <img src="images/SYSS_0.jpg" alt="Something Yellow Something Smooth">
+    <figcaption>Something Yellow, Something Smooth <strong class="bl">2019</strong></figcaption>
+  </figure>
+
+  <figure class="grey portrait syss">
+    <img src="images/SYSS_1.jpg" alt="Something Yellow Something Smooth">
+    <figcaption>Something Yellow, Something Smooth <strong class="bl">2019</strong></figcaption>
+  </figure>
+
+  <figure class="grey portrait syss">
+    <img src="images/SYSS_2.jpg" alt="Something Yellow Something Smooth">
+    <figcaption>Something Yellow, Something Smooth <strong class="bl">2019</strong></figcaption>
+  </figure>
+
+  <!-- <figure class="grey portrait syss">
+    <img src="images/SYSS_4.jpg" alt="Something Yellow Something Smooth">
+    <figcaption>Something Yellow, Something Smooth <strong class="bl">2019</strong></figcaption>
+  </figure> -->
+
+  <figure class="grey portrait syss">
+    <img src="images/SYSS_5.jpg" alt="Something Yellow Something Smooth">
+    <figcaption>Something Yellow, Something Smooth <strong class="bl">2019</strong></figcaption>
+  </figure>
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+
+
 </div>
 
+<div class="project" id="project28" data-filter="else">
 
-<div class="project" id="project8" data-filter="hci" data-weight="5600" data-size="135" data-date="2023-01-01">
   <figure>
-      <img src="images/pp_1.jpg" alt="Project 1 Image 1">
-      <figcaption>Caption for Image 1</figcaption>
+    <img src="images/LI_1.jpg" alt="Note on appropriation, Kinross, modern typography(1992,2004,2009,2019)">
+    <figcaption>Learning Inches <strong>2018</strong></figcaption>
   </figure>
-  <figure >
-      <img src="images/pp_2.jpg" alt="Project 1 Image 2">
-      <figcaption>Caption for Image 2</figcaption>
-  </figure>
-  <figure >
-    <img src="images/pp_3.jpg" alt="Project 1 Image 2">
-    <figcaption>Caption for Image 2</figcaption>
-</figure>
-<figure >
-  <img src="images/pp_4.jpg" alt="Project 1 Image 2">
-  <figcaption>Caption for Image 2</figcaption>
-</figure>
-<figure >
-  <img src="images/pp_5.jpg" alt="Project 1 Image 2">
-  <figcaption>Caption for Image 2</figcaption>
-</figure>
 
-<div class="image-count-container">
-  <span class="image-count">1/2</span>
-</div>
-  <!-- More images for Project 1 -->
+  <figure class="veryyellow dark">
+    <div class="iframe-overlay"></div>
+    <iframe
+    src="https://player.vimeo.com/video/629090151?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+    <figcaption>Learning Inches, Single channel video, 20 Seconds Excerpt from 3 Minutes long video. <strong class="bl">2918</strong></figcaption>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
 </div>
 
+<div class="project" id="project29" data-filter="eph">
 
-  </main>
+  <figure>
+    <img src="images/ED_0.jpg" alt="Poster for a talk by Elmgreen and Dragset  ">
+    <figcaption>Poster for a talk by Elmgreen and Dragset  <strong>2020</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/ED_1.jpg" alt="Poster for a talk by Elmgreen and Dragset  ">
+    <figcaption>The graphic motif of the poster was inspired by a PrEP bottle, reflecting my experience of taking PrEP medication for over a year at Yale.  <strong>2020</strong></figcaption>
+  </figure>
+ 
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project30" data-filter="eph">
+
+  <figure class="portrait lightyellow">
+    <img src="images/book.jpg" alt="Poster designed for graphic design reading club. ">
+    <figcaption>Poster designed for graphic design reading club.  <strong>2020</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project31" data-filter="eph">
+
+  <figure class=" lightyellow">
+    <img src="images/cp_0.jpg" alt="(My Contribution) For a Great America ">
+    <figcaption>For a Great America <strong>2018</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project32" data-filter="type">
+
+  <figure class="landscape syss dark">
+    <img src="images/kimmy_1.png" alt="Kimmy, Revival typeface based on the original drawings of Double Pica Sans-serif Itakic.">
+    <figcaption>Kimmy, Revival typeface based on the original drawings of Double Pica Sans-serif Itakic. <strong class="bl">2020</strong></figcaption>
+  </figure>
+
+  <figure class="landscape syss dark">
+    <img src="images/kimmy_2.png" alt="Kimmy, Revival typeface based on the original drawings of Double Pica Sans-serif Itakic.">
+    <figcaption>Kimmy, Revival typeface based on the original drawings of Double Pica Sans-serif Itakic. <strong class="bl">2020</strong></figcaption>
+  </figure>
+
+  <figure class="syss">
+    <img src="images/kimmy_3.jpg" alt="Kimmy, Revival typeface based on the original drawings of Double Pica Sans-serif Itakic.">
+    <figcaption>Kimmy in use. <strong>2020</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project33" data-filter="book">
+
+  <figure>
+    <img src="images/NOA_0.jpg" alt="Note on appropriation, Kinross, modern typography(1992,2004,2009,2019)">
+    <figcaption>Note on appropriation, < Kinross, modern typography(1992, 2004, 2009, 2019) > <strong>2019</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/NOA_2.gif" alt="Note on appropriation, Kinross, modern typography(1992,2004,2009,2019)">
+    <figcaption>Note on appropriation, < Kinross, modern typography(1992, 2004, 2009, 2019) > <strong>2019</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/NOA2.jpg" alt="Note on appropriation, Kinross, modern typography(1992,2004,2009,2019)">
+    <figcaption>Note on appropriation, < Kinross, modern typography(1992, 2004, 2009, 2019) > <strong>2019</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project34" data-filter="id data">
+
+  <figure>
+    <img src="images/VFI_2.jpg" alt="Very Flexible Identity">
+    <figcaption>Very Flexible Identity <strong>2019</strong></figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/VFI_0.jpg" alt="Very Flexible Identity">
+    <figcaption>Very Flexible Identity <strong class="bl">2019</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project35" data-filter="ekse xl">
+
+  <figure>
+    <img src="images/gardening_01.jpg" alt="Gardening is hard work (2019), A week long performance. Glass beads, Mirrors, Found objects. Size Variable.">
+    <figcaption>Gardening is hard work, A week long performance <strong>2019</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/gardening_01_2.jpg" alt="Gardening is hard work (2019), A week long performance. Glass beads, Mirrors, Found objects. Size Variable.">
+    <figcaption>Gardening is hard work, A week long performance <strong>2019</strong></figcaption>
+  </figure>
+
+
+  <figure class="portrait green">
+    <img src="images/gardening_05.jpg" alt="Gardening is hard work (2019), A week long performance. Glass beads, Mirrors, Found objects. Size Variable.">
+    <figcaption>Gardening is hard work, A week long performance <strong>2019</strong></figcaption>
+  </figure>
+
+  <figure class="portrait green">
+    <img src="images/gardening_03.jpg" alt="Gardening is hard work (2019), A week long performance. Glass beads, Mirrors, Found objects. Size Variable.">
+    <figcaption>Gardening is hard work, A week long performance <strong>2019</strong></figcaption>
+  </figure>
+
+  <figure class="portrait green">
+    <img src="images/gardening_06.jpg" alt="Gardening is hard work (2019), A week long performance. Glass beads, Mirrors, Found objects. Size Variable.">
+    <figcaption>Gardening is hard work, A week long performance <strong>2019</strong></figcaption>
+  </figure>
+
+
+  <figure>
+    <!-- <img src="images/gardening_08.jpg" alt="Gardening is hard work (2019), A week long performance. Glass beads, Mirrors, Found objects. Size Variable."> -->
+    <div class="iframe-overlay"></div>
+    <iframe
+    src="https://player.vimeo.com/video/570028430?autopause=false&background=1color=ffffff&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+    <figcaption>Gardening is hard work, A week long performance <strong>2019</strong></figcaption>
+  </figure>
+
+
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+<div class="project" id="project36" data-filter="id">
+
+  <figure>
+    <img src="images/scs_0.jpg" alt="Screensaver">
+    <figcaption>Flag designed for screensavers.club <strong>2019</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project37" data-filter="eph">
+
+  <figure>
+    <img src="images/Dreja.jpg" alt="Drea Type specimen Poster">
+    <figcaption>Type specimen poster designed for Dreja. <strong>2019</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project38" data-filter="ixd data mh">
+
+  <figure>
+    <img src="images/yo_0.jpg" alt="Yo! Enriching Emotional Quality of Single-Button Messengers through Kinetic Typography">
+    <figcaption>Kim, Minhwan, Kyungah Choi, and Hyeon-Jeong Suk. "Yo! Enriching Emotional Quality of Single-Button Messengers through Kinetic Typography." Proceedings of the 2016 ACM Conference on Designing Interactive Systems. 2016. <a href="images/kim2016.pdf" target="_blank">Read the full paper here</a>
+      <strong>2016</strong></figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/yo_2.jpg" alt="Yo! Enriching Emotional Quality of Single-Button Messengers through Kinetic Typography">
+    <figcaption>Kim, Minhwan, Kyungah Choi, and Hyeon-Jeong Suk. "Yo! Enriching Emotional Quality of Single-Button Messengers through Kinetic Typography." Proceedings of the 2016 ACM Conference on Designing Interactive Systems. 2016. <a href="images/kim2016.pdf" target="_blank">Read the full paper here</a>
+      <strong>2016</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+<div class="project" id="project39" data-filter="ixd data mh">
+
+  <figure class="dark">
+    <img src="images/htb.jpg" alt="HapThimble: A Wearable Haptic Device towards Usable Virtual Touch Screen
+    ">
+    <figcaption>Kim, Hwan, Minhwan Kim, and Woohun Lee. "Hapthimble: A wearable haptic device towards usable virtual touch screen." Proceedings of the 2016 CHI <a href="images/kim2016_hap.pdf" target="_blank">Read the full paper here</a>
+      <strong class="bl">2016</strong></figcaption>
+  </figure>
+
+  <figure class="dark">
+    <img src="images/htb2.jpg" alt="HapThimble: A Wearable Haptic Device towards Usable Virtual Touch Screen
+    ">
+    <figcaption>Kim, Hwan, Minhwan Kim, and Woohun Lee. "Hapthimble: A wearable haptic device towards usable virtual touch screen." Proceedings of the 2016 CHI <a href="images/kim2016_hap.pdf" target="_blank">Read the full paper here</a>
+      <strong class="bl">2016</strong></figcaption>
+  </figure>
+
+  <div class="image-count-container">
+    <span class="image-count">1/2</span>
+  </div>
+</div>
+
+
+
+
+<div id="imageCountDisplay"></div>
+<!-- <div id="nextimage"> &nbsp ➜</div> -->
+<!-- <div id="nextimage">←</div> -->
+
+</main>
 
 
 

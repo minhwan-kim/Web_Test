@@ -60,23 +60,21 @@ function showFigure(figures, index, project) {
 
 // Combined event handler for both touch and mouse events
 function handleInteraction(evt) {
-    // Determine if the event is a touch event
     let isTouchEvent = evt.type.startsWith('touch');
     let clientX = isTouchEvent ? evt.touches[0].clientX : evt.clientX;
 
-    // Handle the start of an interaction
     if (evt.type === 'touchstart' || evt.type === 'mousedown') {
         this.xDown = clientX;
-        this.isInteracting = true; // Flag to track if interaction is happening
-        this.currentFigure = evt.target.closest('figure').querySelector('img');
+        this.isInteracting = true;
+        // Check if the target is the overlay, and if so, use it, otherwise fallback to img
+        this.currentTarget = evt.target.classList.contains('iframe-overlay') ? evt.target : evt.target.closest('figure').querySelector('img');
     }
 
-    // Handle the end of an interaction
     if ((isTouchEvent && evt.type === 'touchend') || (!isTouchEvent && evt.type === 'mouseup' && this.isInteracting)) {
-        let rect = this.currentFigure.getBoundingClientRect();
+        let rect = this.currentTarget.getBoundingClientRect();
         let x = this.xDown - rect.left;
-        let figures = Array.from(this.currentFigure.closest('.project').querySelectorAll('figure'));
-        let currentIndex = figures.indexOf(this.currentFigure.closest('figure'));
+        let figures = Array.from(this.currentTarget.closest('.project').querySelectorAll('figure'));
+        let currentIndex = figures.indexOf(this.currentTarget.closest('figure'));
 
         if (x < rect.width / 2) {
             currentIndex = currentIndex > 0 ? currentIndex - 1 : figures.length - 1;
@@ -84,10 +82,11 @@ function handleInteraction(evt) {
             currentIndex = currentIndex < figures.length - 1 ? currentIndex + 1 : 0;
         }
 
-        showFigure(figures, currentIndex, this.currentFigure.closest('.project'));
+        showFigure(figures, currentIndex, this.currentTarget.closest('.project'));
         this.isInteracting = false;
     }
 }
+
 
 // Initialize projects on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {

@@ -7,6 +7,20 @@
 }
 
 
+@font-face {
+  font-family: 'ROM';
+  src:
+    url('../fonts/ABCROM-Regular-Trial.woff2') format('woff2');
+    font-weight: Regular;
+}
+
+@font-face {
+  font-family: 'ROM';
+  src:
+    url('../fonts/ABCROM-Light-Trial.woff2') format('woff2');
+    font-weight: 400;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 
@@ -16,14 +30,16 @@
   box-sizing: border-box;
 }
 
+
+
 main, body{
-  font-family: "Overused Grotesk", sans-serif;
-  font-weight: 700;
+  font-family: "ROM", serif;
+  font-weight: Regular;
   font-style: normal;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.15px;
   /* word-spacing: 0.5px; */
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 20px;
   overflow-x:hidden;
 }
 
@@ -39,15 +55,32 @@ h2 {
 }
 
 .intro{
-  padding: 14px 14px 0px 14px;
-  margin-bottom: 5vh;
+  font-family: "Overused Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: inline;
 
+}
+
+strong{
+  font-size: 12px;
+  font-weight: 400;
+  /* font-family: monospace; */
+  background-color: rgb(35, 236, 0);
+  color: rgb(37, 37, 37);
+  border-radius: 24px;
+  padding: 2px 6px 2px 6px;
+  margin-right: 1px;
+  margin-left: 3px;
+  opacity: 0.5;
 }
 
 .sort{
   padding: 14px 14px 0px 14px;
-
-  margin-bottom: 5vh;;
+  margin-bottom: 5vh;
+  display: none;
 }
 
 .sort button {
@@ -80,6 +113,9 @@ h2 {
 }
 
 
+#cover{
+  display: none;
+}
 
 .project {
   width: 100%; /* Full width */
@@ -99,14 +135,71 @@ h2 {
 
 }
 
+
 .project img {
   width: 100%; /* Image fills the width of the figure */
-  height: 120vw; /* Maintain aspect ratio */
+  height: 80vw; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the area while preserving aspect ratio */
   display: block; /* Remove any default inline spacing */
   padding-left:14px;
   padding-right: 14px;
 }
+
+.project iframe {
+  width: 100%; /* Full width of the figure */
+  height: 80vw; /* Maintain aspect ratio similar to images */
+  object-fit: cover; /* Cover the area while preserving aspect ratio */
+  border: none; /* Optionally remove the border */
+}
+
+/* left aligned
+.project figure.portrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72vw; 
+  overflow: hidden; 
+}
+
+.project figure.portrait img {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%; 
+  height: auto;
+  width: auto;
+} */
+
+
+.project figure.portrait {
+  position: relative;
+  width: 100%; /* Ensure the figure takes up the full width of its container */
+  height: 72vw; /* Set a height that matches other images or adjust based on your design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents any overflow from the figure */
+}
+
+.project figure.portrait img {
+  object-fit: contain; /* Ensures image aspect ratio is maintained */
+  max-height: 100%; /* Limits the image height to the figure's height */
+  max-width: 100%; /* Limits the image width, preventing overflow */
+  position: relative; /* Adjusted from absolute to relative */
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+
+.iframe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; /* Ensure it's above the iframe but below any clickable elements in your figure */
+}
+
+
 
 .project figcaption {
   width: 85%;
@@ -114,6 +207,7 @@ h2 {
   padding-left: 14px; /* Space inside the caption */
   margin-top: 12px;
   text-align: left; /* Align text to center */
+  margin-bottom: 40px;
 
 }
 
@@ -126,7 +220,7 @@ h2 {
 /* New CSS for the image count container */
 .image-count-container {
   position: absolute;
-  top: calc(120vw + 12px);
+  top: calc(80vw + 12px);
   right: 12px;
   letter-spacing: 2px;
   text-align: right;

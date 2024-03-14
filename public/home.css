@@ -1,17 +1,50 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@font-face {
+  font-family: 'ROM';
+  src:
+    url('../fonts/ABCROM-Regular-Trial.woff2') format('woff2');
+    font-weight: Regular;
+}
+
+@font-face {
+  font-family: 'ROM';
+  src:
+    url('../fonts/ABCROM-Light-Trial.woff2') format('woff2');
+    font-weight: Light;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+
 }
 
+
+strong{
+  font-weight: 400;
+  font-size:0.72rem;
+  /* font-family: monospace; */
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 2px 6px 2px 6px;
+  margin-right: 1px;
+  margin-left: 3px;
+  opacity: 0.75;
+}
+
+strong.bl{
+  color: #1e1e1e;
+  background-color: rgba(116, 116, 116, 0.25);
+}
 
 img {
   transition: opacity 0.5s;
-}
-
-body {
-  padding-top: env(safe-area-inset-top);
 }
 
 
@@ -20,7 +53,7 @@ body, html {
   height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-columns: 8fr 3fr;
+  grid-template-columns: 16fr 5.75fr;
   grid-auto-columns: minmax(1000px, auto);
   grid-template-rows: 20fr 0.05fr;
   grid-template-areas:
@@ -29,17 +62,21 @@ body, html {
   font-family: "neue-haas-grotesk-text", sans-serif;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 0.5px;
-  word-spacing: 0.3px;
-  font-size: 0.90rem;
-  line-height: 1.2rem;
+  letter-spacing: 0.01rem;
+  word-spacing: 0.01rem;
+  font-size: 0.87rem; 
+  line-height: 1.161rem;
   background-color: #F6F6F6;
-  overflow: hidden;
+    overflow-y: hidden;
+
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
 
+.image-count-container {
+  display: none;
+}
 
 .cursor-overlay {
   position: absolute;
@@ -48,17 +85,18 @@ body, html {
   width: 50%;
   z-index: 5;
   background: transparent;
+  mix-blend-mode: difference;
 }
 
 .cursor-overlay.left {
   left: 0;
-  cursor: url('../../Web_Test/images/previous_white.svg'), auto;
+  cursor: url('../images/previous_white.svg') 37 12, auto;
 
 }
 
 .cursor-overlay.right {
   right: 0;
-  cursor: url('../../Web_Test/images/next_white.svg'), auto;
+  cursor: url('../images/next_white.svg') 37 12, auto;
 }
 
 
@@ -74,6 +112,7 @@ body, html {
   display: none; /* Hide all projects initially */
   width: 100%;
   height: 100%;
+  overflow-y: hidden;
 }
 
 .project figure {
@@ -95,6 +134,28 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: filter 1.3s ease-in-out;
+
+  animation-name: fade;
+  animation-duration: 0.25s;
+
+}
+
+.portrait img{
+  object-fit:contain;
+  position: absolute;
+  top: 52%; /* Position halfway down the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  max-height: 90%;
+}
+
+.landscape img{
+
+  object-fit:contain;
+  position: absolute;
+  top: 52%; /* Position halfway down the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 97%;
+
 }
 
 .project img.fit {
@@ -110,28 +171,204 @@ body, html {
   left: 50%; /* Position halfway across the parent */
   transform: translate(-50%, -50%); /* Center the iframe */
   width: 100%; /* Full width of the parent */
-  min-height: 60%; /* Full height of the parent */
+  min-height: 65%; /* Full height of the parent */
   pointer-events: none; /* Optional: disable mouse events */
   border: none; /* Remove border */
-
 }
 
+#project21 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 103%; /* Full width of the parent */
+  min-height: 75%; /* Full height of the parent */
+  max-width: 98%;
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+#project5 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 103%; /* Full width of the parent */
+  min-height: 75%; /* Full height of the parent */
+  max-width: 98%;
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+
+#project8 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 108%; /* Full width of the parent */
+  min-height: 100%; /* Full height of the parent */
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+
+#project9 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 100%; /* Full width of the parent */
+  min-height: 100%; /* Full height of the parent */
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+#project12 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 51.5%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 100%; /* Full width of the parent */
+  min-height: 88%; /* Full height of the parent */
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+
+#project23 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 103%; /* Full width of the parent */
+  min-height: 75%; /* Full height of the parent */
+  max-width: 100%;
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+#project28 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 103%; /* Full width of the parent */
+  min-height: 75%; /* Full height of the parent */
+  max-width: 96%;
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+#project35 iframe {
+  position: absolute; /* Absolute positioning within the figure */
+  top: 50%; /* Position halfway down the parent */
+  left: 50%; /* Position halfway across the parent */
+  transform: translate(-50%, -50%); /* Center the iframe */
+  width: 103%; /* Full width of the parent */
+  min-height: 75%; /* Full height of the parent */
+  max-width: 96%;
+  pointer-events: none; /* Optional: disable mouse events */
+  border: none; /* Remove border */
+}
+
+.fullscreen{
+  min-height: 100%; /* Full height of the parent */
+  position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
+}
+
+
+a:visited{
+  color: #F6F6F6;
+}
 
 
 .dark figcaption{
   color: black;
 }
+.grey figcaption{
+  color: #7e7e7e;
+}
+
+.yellow{
+  background-color: rgb(192, 194, 171);
+  /* background-color: #C5D0B5; */
+}
+
+.lightyellow{
+  /* background-color: rgb(46, 55, 63); */
+  /* background-color: rgb(61, 63, 46); */
+  background-color: #352011;
+  /* background-color: #C5D0B5; */
+}
+
+.blue{
+  background-color: rgb(182, 229, 255);
+}
+
+.darkblue{
+  background-color: rgb(21, 34, 42);
+}
+
+.pale{
+  background-color: rgb(177, 145, 64);
+
+}
+
+.black{
+  background-color: black;
+}
+
+.syss{
+  background-color: rgb(240, 240, 240);
+
+}
+
+.veryyellow{
+  background-color: rgb(248, 215, 72);
+
+}
+
+.green{
+  background-color: rgb(177, 178, 177);
+
+}
+
+
 
 figcaption {
   position: absolute; /* Absolute position */
-  left: 0;
-  top: 16px;
-  width: 92%;
-  margin-left: 20px;
+  left: 8px;
+  padding-top: 8px;
+  top:8px;
+  width: 88%;
+  padding-left: 12px;
+  padding-right: 8px;
+  padding-bottom: 8px;
   color: white; /* Text color */
   opacity: 1;
   transition: opacity 1.3s ease, color 0.8s ease;
   z-index: 99;
+  border-radius: 8px;
+}
+
+
+.credit{
+  display: none;
+  position: absolute;
+  left: 20px;
+  bottom:20px;
+  z-index: 99;
+  line-height: 2em;
+}
+
+.blob{
+  /* background-color: rgba(35, 35, 35, 0.1); */
+}
+
+
+.blob_w{
+  /* background-color: rgba(255, 255, 255, 0.5); */
 }
 
 .blur {
@@ -145,6 +382,7 @@ figcaption {
   top: 16px;
   margin-right:20px;
   right: 0;
+  font-size: 0.87rem; 
 
   /* left: 50%; */
   /* transform: translateX(-50%); */
@@ -175,7 +413,11 @@ aside {
   background: white;
   overflow-y: scroll;
   overflow-x: hidden;
+  min-width: 300px;
+
 }
+
+
 
 .intro, .index {
   position: sticky; /* or 'fixed' depending on your layout */
@@ -204,8 +446,7 @@ h2 {
   font-family: "neue-haas-grotesk-text", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 0.90rem;
-  line-height: 1.24rem;
+  font-size: 0.87rem; 
   display: inline;
 }
 
@@ -281,7 +522,7 @@ ul {
 }
 
 .list .tile {
-  transition: background-color 0.5s ease, border-radius 0.15s ease;
+  transition: background-color 0.5s ease, padding-left 0.7s ease;
 }
 
 .list {
@@ -292,15 +533,20 @@ ul {
 }
 
 .list::-webkit-scrollbar {
-  width: 10px; /* Adjust the width of the scrollbar */
+  width: 0.52vw; /* Adjust the width of the scrollbar */
+
 }
 
 .list::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Track color */
+  /* background: #f1f1f1; */
+  background: #c2dffa; 
 }
 
 .list::-webkit-scrollbar-thumb {
-  background: #b4b3a3; /* Handle color */
+  /* background: #b4b3a3;  */
+  background: #FE4814;
+  /* background: #4f5a8a; */
+  border-radius: 24px;
 }
 
 .list::-webkit-scrollbar-thumb:hover {
@@ -323,12 +569,14 @@ ul {
 }
 
 .tile_category {
-  font-size: 0.60rem;
+  font-size: 0.65rem;
   line-height: 1.24rem;
   color: black 0.8;
   font-weight: 400;
   padding-top: 4px;
 }
+
+
 
 .tile_title {
   /* border-top: 0.1rem red dotted; */
@@ -339,15 +587,22 @@ ul {
   /* background: #D0FF71; green*/
   /* border-radius: 24px; */
   background: #ffe600;
+  
 }
 
 .active {
-  background: #E2E1CD;
-  /* border-radius: 24px; */
+  /* background: #efedbe; */
+  background: #f8f8a0;
+  /* background: #62fe14; */
+  /* background: #FE4814; */
+  /* background: #c2dffa; */
   color: black;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  word-spacing: 0.2px; */
+  padding-left: 36px;
+}
+
+.active:hover{
+  /* color:black; */
+  /* padding-left: 36px; */
 }
 
 .filtered {
@@ -375,6 +630,7 @@ ul {
   width: 100%;
   margin-left: -0.3vw;
   align-items: center;
+  line-height: 2rem;
 }
 
 .filterButton.active {
@@ -399,4 +655,11 @@ ul {
 #move_to_top {
   text-align: center; /* Center the text inside the tile */
   /* Add other styles as needed */
+}
+
+
+
+@keyframes fade {
+  from { filter: grayscale(50%); }
+  to { filter: grayscale(0%); }
 }
