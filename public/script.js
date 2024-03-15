@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const leftOverlay = document.querySelector('.cursor-overlay.left');
     const rightOverlay = document.querySelector('.cursor-overlay.right');
     const coverImages = [
-        "../../Web_Test/images/FP_01_4.jpg"
+        "../images/FP_01_4.jpg"
     ];
     
     let currentProjectIndex = 0;
