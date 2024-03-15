@@ -55,13 +55,8 @@ h2 {
 }
 
 .intro{
-  font-family: "Overused Grotesk", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 16px;
-  display: inline;
-
+  /* display: inline; */
+  padding: 16px;
 }
 
 strong{
@@ -119,17 +114,17 @@ strong{
 
 .project {
   width: 100%; /* Full width */
-  padding-bottom: 56px;
+  padding-bottom: 48px;
   position: relative; /* Make the .project container relative */
   display: flex; /* Add this */
   flex-direction: column; /* Stack children vertically */
   align-items: flex-start; /* Align children to the start of the flex container */
+  height: auto; /* Adjust height to fit the content */
 
 }
 
 .project figure {
   position: relative;
-  height: auto; /* Adjust height to fit the content */
   transition: transform 0.3s ease-in-out;
   width: 100%;
 
@@ -138,11 +133,12 @@ strong{
 
 .project img {
   width: 100%; /* Image fills the width of the figure */
-  height: 80vw; /* Maintain aspect ratio */
+  height: 82vw; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the area while preserving aspect ratio */
   display: block; /* Remove any default inline spacing */
   padding-left:14px;
   padding-right: 14px;
+  border-radius: 8vw;
 }
 
 .project iframe {
@@ -171,22 +167,12 @@ strong{
 
 
 .project figure.portrait {
-  position: relative;
-  width: 100%; /* Ensure the figure takes up the full width of its container */
-  height: 72vw; /* Set a height that matches other images or adjust based on your design */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Prevents any overflow from the figure */
+ 
 }
 
 .project figure.portrait img {
   object-fit: contain; /* Ensures image aspect ratio is maintained */
-  max-height: 100%; /* Limits the image height to the figure's height */
-  max-width: 100%; /* Limits the image width, preventing overflow */
-  position: relative; /* Adjusted from absolute to relative */
-  transform: translateY(-50%);
-  top: 50%;
+  padding: 16px;
 }
 
 
@@ -207,7 +193,7 @@ strong{
   padding-left: 14px; /* Space inside the caption */
   margin-top: 12px;
   text-align: left; /* Align text to center */
-  margin-bottom: 40px;
+  margin-bottom: 12px;
 
 }
 
@@ -220,7 +206,7 @@ strong{
 /* New CSS for the image count container */
 .image-count-container {
   position: absolute;
-  top: calc(80vw + 12px);
+  top: calc(82vw + 12px);
   right: 12px;
   letter-spacing: 2px;
   text-align: right;
