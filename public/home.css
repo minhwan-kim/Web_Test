@@ -22,6 +22,9 @@
   box-sizing: border-box;
 }
 
+.label{
+  color: rgb(44, 44, 44);
+}
 
 
 @media (max-width: 1160px) {
@@ -447,7 +450,7 @@ h2 {
   font-family: "neue-haas-grotesk-text", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 0.87rem; 
+  font-size: 0.8rem; 
   display: inline;
 }
 
@@ -695,8 +698,8 @@ body, html {
   font-style: normal;
   letter-spacing: 0.03rem;
   word-spacing: 0.03rem;
-  font-size: 0.87rem; 
-  line-height: 1.161rem;
+  font-size: 0.83rem; 
+  line-height: 1.16rem;
   background-color: #F6F6F6;
     overflow-y: hidden;
 
@@ -1096,7 +1099,7 @@ h2 {
   font-family: "neue-haas-grotesk-text", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 0.87rem; 
+  font-size: 0.83rem; 
   display: inline;
 }
 
@@ -1117,6 +1120,7 @@ h2 {
   width: 50%;
   align-items: baseline;
   padding-bottom: 12px;
+
 }
 
 .CTA {
