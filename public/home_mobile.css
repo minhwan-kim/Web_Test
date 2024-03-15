@@ -10,18 +10,26 @@
 @font-face {
   font-family: 'ROM';
   src:
-    url('../fonts/ABCROM-Regular-Trial.woff2') format('woff2');
-    font-weight: Regular;
-}
-
-@font-face {
-  font-family: 'ROM';
-  src:
     url('../fonts/ABCROM-Light-Trial.woff2') format('woff2');
     font-weight: 400;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url("https://use.typekit.net/uyw3uyk.css");
+
+
+@font-face {
+  font-family: "ff-speak-web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "menco", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
 
 
 * {
@@ -30,29 +38,46 @@
   box-sizing: border-box;
 }
 
+#email{
+  color: rgb(4, 131, 31);
+  padding-bottom: 6px;
+  padding-left: 4vw;
+}
 
+#ig{
+  color: #3b70ff;
+  padding-left: 14vw;
+  padding-bottom: 6px;
+}
+
+#resume{
+  padding-left: 30vw;
+  color: #ff9a3b;
+  padding-bottom: 6px;
+}
+
+#disclaimer{
+  font-size:14px;
+  line-height: 14px;
+  text-align: center;
+  padding-bottom: 6px;
+
+}
 
 main, body{
-  font-family: "ROM", serif;
-  font-weight: Regular;
+  /* font-family: "menco", sans-serif;
+  font-weight: 300; */
+
+  font-family: 'ff-speak-web', sans-serif;
+  font-weight: 400;
   font-style: normal;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.1px;
   /* word-spacing: 0.5px; */
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 19px;
+  line-height: 21px;
   overflow-x:hidden;
 }
 
-h2 {
-  /* font-family: 'Hanken Grotesk', sans-serif;
-  font-weight: 600; */
-  font-family: "Overused Grotesk", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 16px;
-  display: inline;
-}
 
 .intro{
   /* display: inline; */
@@ -60,16 +85,17 @@ h2 {
 }
 
 strong{
+  
   font-size: 12px;
   font-weight: 400;
   /* font-family: monospace; */
-  background-color: rgb(35, 236, 0);
-  color: rgb(37, 37, 37);
+  /* background-color: rgb(201, 201, 201); */
+  color: rgb(231, 10, 10);
   border-radius: 24px;
   padding: 2px 6px 2px 6px;
   margin-right: 1px;
   margin-left: 3px;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 .sort{
@@ -132,18 +158,22 @@ strong{
 
 
 .project img {
-  width: 100%; /* Image fills the width of the figure */
-  height: 82vw; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the area while preserving aspect ratio */
-  display: block; /* Remove any default inline spacing */
+  width: 100%; 
+  height: 76vw;
+  object-fit: cover;
+  display: block; 
   padding-left:14px;
   padding-right: 14px;
   border-radius: 8vw;
+
+
 }
+
+
 
 .project iframe {
   width: 100%; /* Full width of the figure */
-  height: 80vw; /* Maintain aspect ratio similar to images */
+  height: 76vw; /* Maintain aspect ratio similar to images */
   object-fit: cover; /* Cover the area while preserving aspect ratio */
   border: none; /* Optionally remove the border */
 }
@@ -198,15 +228,12 @@ strong{
 }
 
 /* Correct the typo in the selector */
-.project figure img {
-  max-height: 70vh; /* Limit the image height */
-  object-fit: cover; /* Adjusts the object-fit property */
-}
+
 
 /* New CSS for the image count container */
 .image-count-container {
   position: absolute;
-  top: calc(82vw + 12px);
+  top: calc(76vw + 12px);
   right: 12px;
   letter-spacing: 2px;
   text-align: right;

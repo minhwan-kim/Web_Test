@@ -54,6 +54,9 @@ body, html {
 }
 
 
+#resume{
+  color: #ff9a3b;
+}
 
 
 
@@ -667,6 +670,14 @@ ul {
 
 @media (min-width:1160px) and (max-width:2000px) {
 
+#resume{
+  color: #6d6d6d;
+}
+
+#email{
+  color:#565656
+}
+
 
 body, html {
   width: 100vw;
@@ -1072,7 +1083,7 @@ aside a {
 
 .intro {
   /* background: red; */
-  padding-bottom: 8vh;
+  padding-bottom: 2vh;
   border-bottom: 0.1rem solid;
   margin-left: 22px;
   margin-right: 20px;
