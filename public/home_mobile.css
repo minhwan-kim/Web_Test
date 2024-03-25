@@ -38,6 +38,11 @@
   box-sizing: border-box;
 }
 
+.credit{
+  padding: 14px;
+  text-align: center;
+}
+
 #email{
   color: rgb(4, 131, 31);
   padding-bottom: 6px;
@@ -89,12 +94,12 @@ strong{
   font-size: 12px;
   font-weight: 400;
   /* font-family: monospace; */
-  /* background-color: rgb(201, 201, 201); */
-  color: rgb(231, 10, 10);
+  background-color: rgb(247, 247, 247);
+  color: rgb(231, 154, 10);
   border-radius: 24px;
   padding: 2px 6px 2px 6px;
   margin-right: 1px;
-  margin-left: 3px;
+  margin-left: -1px;
   /* opacity: 0.5; */
 }
 
@@ -224,6 +229,8 @@ strong{
   margin-top: 12px;
   text-align: left; /* Align text to center */
   margin-bottom: 12px;
+  font-size: 17px;
+  line-height: 20px;
 
 }
 
@@ -237,6 +244,8 @@ strong{
   right: 12px;
   letter-spacing: 2px;
   text-align: right;
+  font-size: 17px;
+  line-height: 20px;
 
 }
 

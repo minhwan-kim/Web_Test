@@ -58,9 +58,12 @@ body, html {
 
 
 #resume{
-  color: #ff9a3b;
+  color: #6d6d6d;
 }
 
+#email{
+  color:#565656
+}
 
 
 .image-count-container {
@@ -437,7 +440,7 @@ aside a {
 
 .intro {
   /* background: red; */
-  padding-bottom: 8vh;
+  padding-bottom: 2vh;
   border-bottom: 0.1rem solid;
   margin-left: 22px;
   margin-right: 20px;
@@ -1342,7 +1345,7 @@ body, html {
   font-style: normal;
   letter-spacing: 0.02rem;
   word-spacing: 0.02rem;
-  font-size: 0.92rem; 
+  font-size: 0.91rem; 
   line-height: 1.4rem;
   background-color: #F6F6F6;
     overflow-y: hidden;
@@ -1352,7 +1355,13 @@ body, html {
   user-select: none; /* Standard syntax */
 }
 
+#resume{
+  color: #6d6d6d;
+}
 
+#email{
+  color:#565656
+}
 
 
 
@@ -1730,7 +1739,7 @@ aside a {
 
 .intro {
   /* background: red; */
-  padding-bottom: 8vh;
+  padding-bottom: 2vh;
   border-bottom: 0.1rem solid;
   margin-left: 22px;
   margin-right: 20px;
@@ -1743,7 +1752,7 @@ h2 {
   font-family: "neue-haas-grotesk-text", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 0.92rem; 
+  font-size: 0.91rem; 
   line-height: 1.4rem;
   display: inline;
 }
