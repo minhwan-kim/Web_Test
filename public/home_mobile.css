@@ -44,28 +44,41 @@
 }
 
 #email{
+  padding-top: 12px;
+  font-family: 'ff-speak-web', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
   color: rgb(4, 131, 31);
   padding-bottom: 6px;
   padding-left: 4vw;
 }
 
 #ig{
+  font-family: 'ff-speak-web', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
   color: #3b70ff;
   padding-left: 14vw;
   padding-bottom: 6px;
 }
 
 #resume{
+  font-family: 'ff-speak-web', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
   padding-left: 30vw;
   color: #ff9a3b;
   padding-bottom: 6px;
+  padding-bottom: 12px;
 }
 
 #disclaimer{
-  font-size:14px;
-  line-height: 14px;
+    font-family: 'ff-speak-web', sans-serif;
+  font-weight: 400;
+  font-size:16px;
+  line-height: 18px;
   text-align: center;
-  padding-bottom: 6px;
+  padding-bottom: 12px;
 
 }
 
@@ -73,13 +86,16 @@ main, body{
   /* font-family: "menco", sans-serif;
   font-weight: 300; */
 
-  font-family: 'ff-speak-web', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0.1px;
+  /* font-family: 'ff-speak-web', sans-serif; */
+  /* font-weight: 400; */
+    /* letter-spacing: 0.1px; */
   /* word-spacing: 0.5px; */
-  font-size: 19px;
-  line-height: 21px;
+  font-family: 'Overused Grotesk';
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
   overflow-x:hidden;
 }
 
@@ -91,11 +107,11 @@ main, body{
 
 strong{
   
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 10px;
+  font-weight: 700;
   /* font-family: monospace; */
-  background-color: rgb(247, 247, 247);
-  color: rgb(231, 154, 10);
+  /* background-color: rgb(247, 247, 247); */
+  color: rgb(231, 28, 10);
   border-radius: 24px;
   padding: 2px 6px 2px 6px;
   margin-right: 1px;
@@ -145,7 +161,7 @@ strong{
 
 .project {
   width: 100%; /* Full width */
-  padding-bottom: 48px;
+  padding-bottom: 24px;
   position: relative; /* Make the .project container relative */
   display: flex; /* Add this */
   flex-direction: column; /* Stack children vertically */
@@ -169,8 +185,8 @@ strong{
   display: block; 
   padding-left:14px;
   padding-right: 14px;
-  border-radius: 8vw;
-
+  /* border-radius: 8vw; */
+  /* border-radius: 20px; */
 
 }
 
@@ -223,14 +239,14 @@ strong{
 
 
 .project figcaption {
-  width: 85%;
+  width: 90%;
   color: black; /* Your style here */ /* Optional: styling for visibility */
-  padding-left: 14px; /* Space inside the caption */
+  padding-left: 15px; /* Space inside the caption */
   margin-top: 12px;
   text-align: left; /* Align text to center */
   margin-bottom: 12px;
-  font-size: 17px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 15px;
 
 }
 
@@ -244,8 +260,8 @@ strong{
   right: 12px;
   letter-spacing: 2px;
   text-align: right;
-  font-size: 17px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 15px;
 
 }
 
