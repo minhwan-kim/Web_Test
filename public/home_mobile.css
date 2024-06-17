@@ -143,6 +143,26 @@ strong{
   display: none;
 }
 
+.novel{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.prop{
+  font-family: serif;
+  margin: 5vw;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 3vw;
+  line-height: 3.8vw;
+
+}
+
+
 .project {
   width: 100%; /* Full width */
   padding-bottom: 24px;
